@@ -1,7 +1,7 @@
 <template>
   <div class="pagination-block">
     <div class="pagination-block__page">
-      Page #1
+      <slot></slot>
     </div>
     <div class="pagination-block__navigation">
       <ul class="pagination-list">

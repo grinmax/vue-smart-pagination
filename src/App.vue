@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div class="copyright">&copy; Copyright 2018 Private enterprise "Web Friends"<br /><a href="https://www.webfriends.by">www.webfriends.by</a></div>
-    <Pagination/>
+    <pagination>Page #1</pagination>
+    <pagination-controls></pagination-controls>
+
   </div>
 </template>
 
