@@ -9,16 +9,14 @@
     >
       <li class="pagination-list__li">
         <button
+                v-if="settings.hideArrows != true"
                 @click="switch_page(curIndex - 1)"
                 class="pagination-list__button pagination-list__arrow pagination-list__arrow_prev"
                 :class="[
                   {'pagination-list__button_disabled': curIndex === 0}
                 ]"
                 :style="[
-                    settings.arrowColor ? {'border-color': settings.arrowColor} : {'border-color': '#e1e1e1'},
-                    settings.hideArrows ? {'display': 'block'} : {'display': 'none'},
-                    settings.controlStyle === 'square' ? {'border-radius': '0'} : {'border-radius': '4px'} ||
-                    settings.controlStyle === 'circle' ? {'border-radius': '50%'} : {'border-radius': '4px'}
+                    settings.arrowColor ? {'border-color': settings.arrowColor} : {'border-color': '#e1e1e1'}
                 ]"
         >
           &raquo;
@@ -34,9 +32,7 @@
               :style="[
                   settings.pageButtons ? {'background': settings.pageButtons.background} : {'background': '#fff'},
                   settings.pageButtons ? {'borderColor': settings.pageButtons.borderColor} : {'border-color': '#02C8F3'},
-                  settings.pageButtons ? {'color': settings.pageButtons.color} : {'color': '#02C8F3'},
-                  settings.controlStyle === 'square' ? {'border-radius': '0'} : {'border-radius': '4px'} ||
-                  settings.controlStyle === 'circle' ? {'border-radius': '50%'} : {'border-radius': '4px'}
+                  settings.pageButtons ? {'color': settings.pageButtons.color} : {'color': '#02C8F3'}
               ]"
               @click="[
                 switch_page(index)
@@ -51,16 +47,14 @@
       </template>
       <li class="pagination-list__li">
         <button
+                v-if="settings.hideArrows != true"
                 @click="switch_page(curIndex + 1)"
                 class="pagination-list__button pagination-list__arrow pagination-list__arrow_next"
                 :class="[
                   {'pagination-list__button_disabled': curIndex === settings.array.length - 1}
                 ]"
                 :style="[
-                    settings.arrowColor ? {'border-color': settings.arrowColor} : {'border-color': '#e1e1e1'},
-                    settings.hideArrows ? {'display': 'block'} : {'display': 'none'},
-                    settings.controlStyle === 'square' ? {'border-radius': '0'} : {'border-radius': '4px'} ||
-                    settings.controlStyle === 'circle' ? {'border-radius': '50%'} : {'border-radius': '4px'}
+                    settings.arrowColor ? {'border-color': settings.arrowColor} : {'border-color': '#e1e1e1'}
                 ]"
           >
           &raquo;
@@ -184,6 +178,18 @@ export default {
   },
   beforeMount () {
     this.$set(this.settings.array[0], 'active', true)
+    let root = document.querySelector(':root')
+    if (this.settings.arrowColor) {
+      root.style.setProperty('--arrowColor', this.settings.arrowColor)
+    }
+    if (this.settings.controlStyle === 'square') {
+      root.style.setProperty('--controlStyle', '0')
+    }
+    if (this.settings.controlStyle === 'circle') {
+      root.style.setProperty('--controlStyle', '50%')
+    } else {
+      root.style.setProperty('--controlStyle', '4px')
+    }
   }
 }
 </script>
@@ -191,7 +197,8 @@ export default {
 <style lang="scss">
 
   :root {
-    /*--my-background: red;*/
+    --arrowColor: red;
+    --controlStyle: 0;
   }
 
   .pagination-list {
@@ -201,7 +208,6 @@ export default {
     padding: 0;
     justify-content: center;
     user-select: none;
-    /*background: var(--my-background);*/
 
     li {
       list-style-type: none;
@@ -223,11 +229,13 @@ export default {
       height: 40px;
       background-color: #ffffff;
       color: #9da0a2;
+      /*color: var(--arrowColor);*/
       transition: border-color .2s ease-in, background-color .2s ease-in;
       cursor: pointer;
-      border-radius: 4px;
+      /*border-radius: 4px;*/
       outline: none;
       border: solid 1px #e1e1e1;
+      border-radius: var(--controlStyle);
       &_disabled {
         opacity: 0;
         pointer-events: none;
