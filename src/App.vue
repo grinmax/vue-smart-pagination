@@ -3,9 +3,7 @@
     <div class="pagination-img">
       <img src="./assets/logo.png">
     </div>
-    <pagination-page :settings="settings" v-for="(item, index) in pages" :key="index" v-if="item.active">
-      {{ item.content }}
-    </pagination-page>
+    <pagination-page :settings="settings" />
     <pagination-control :settings="settings"/>
   </div>
 </template>
@@ -73,21 +71,32 @@ export default {
       return {
         array: this.pages,
         maxButtons: 5,
-        hideArrows: true,
-        arrowColor: 'red',
-        controlStyle: 'square',
         pageClass: 'pageClass-test',
+        hideArrows: false,
+        controlStyle: 'circle',
         controlClass: 'controlClass-test',
         pageButtons: {
           'background': '',
           'borderColor': '',
-          'color': ''
-        }
+          'color': '',
+          'backgroundHover': '',
+          'borderColorHover': '',
+          'colorHover': ''
+        },
+        currentPageButton: {
+          'backgroundActive': '',
+          'borderColorActive': '',
+          'colorActive': ''
+        },
+        controlDotsStyle: 'style2',
+        arrowStyle: 'styleArrow-1',
+        arrowStyleColor: '#02C8F3',
+        spinner: true,
+        spinnerStyle: 'spinnerStyle-1',
+        spinnerColor: 'white',
+        pageStarted: 6
       }
     }
   }
 }
 </script>
-
-<style lang="scss">
-</style>

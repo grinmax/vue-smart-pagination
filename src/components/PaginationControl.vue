@@ -1,7 +1,6 @@
 <template>
   <div>
     <slot></slot>
-    {{maxButton}}
     <ul class="pagination-list"
         :class="[
           settings.controlClass
@@ -10,29 +9,54 @@
       <li class="pagination-list__li">
         <button
                 v-if="settings.hideArrows != true"
-                @click="switch_page(curIndex - 1)"
+                @click="[
+                  switch_page(curIndex - 1),
+                ]"
                 class="pagination-list__button pagination-list__arrow pagination-list__arrow_prev"
                 :class="[
-                  {'pagination-list__button_disabled': curIndex === 0}
+                  {'pagination-list__button_disabled': curIndex === 0},
+                  styleArrows()
                 ]"
                 :style="[
-                    settings.arrowColor ? {'border-color': settings.arrowColor} : {'border-color': '#e1e1e1'}
                 ]"
         >
-          &raquo;
+          <svg v-if="this.settings.arrowStyle === 'styleArrow-1'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
+                <g>
+                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0    C53,41.359,41.359,53,27,53z" data-original="#57B0E3" class="qqq"/>
+                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,54C12.112,54,0,41.888,0,27S12.112,0,27,0s27,12.112,27,27S41.888,54,27,54z M27,2    C13.215,2,2,13.215,2,27s11.215,25,25,25s25-11.215,25-25S40.785,2,27,2z" data-original="#57B0E3" class="qqq"/>
+                </g>
+                  <path style="fill:#FFFFFF" d="M27,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L37.586,27L26.293,15.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418L27.707,39.707   C27.512,39.902,27.256,40,27,40z" data-original="#FFFFFF" class="active-path"/>
+                  <path style="fill:#FFFFFF" d="M17,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L27.586,27L16.293,15.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418L17.707,39.707   C17.512,39.902,17.256,40,17,40z" data-original="#FFFFFF" class="active-path"/>
+              </g></g>
+            </svg>
+          <svg v-else-if="this.settings.arrowStyle === 'styleArrow-2'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
+              <g>
+                <rect x="1" y="1" :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" width="52" height="52" data-original="#687492" class=""/>
+                <path style="fill:#fff" d="M54,54H0V0h54V54z M2,52h50V2H2V52z" data-original="#687492" class=""/>
+              </g>
+              <path style="fill:#FFFFFF" d="M19,45c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L34.586,27L18.293,10.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L37.414,27L19.707,44.707C19.512,44.902,19.256,45,19,45z" data-original="#FFFFFF" class="active-path"/>
+            </g></g>
+          </svg>
+
+            <svg v-else xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px"><g><g>
+                <g>
+                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0    C53,41.359,41.359,53,27,53z" data-original="#9B507E"/>
+                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,54C12.112,54,0,41.888,0,27S12.112,0,27,0s27,12.112,27,27S41.888,54,27,54z M27,2    C13.215,2,2,13.215,2,27s11.215,25,25,25s25-11.215,25-25S40.785,2,27,2z" data-original="#9B507E"/>
+                </g>
+                  <path style="fill:#FFFFFF" d="M39,28H13c-0.552,0-1-0.447-1-1s0.448-1,1-1h26c0.552,0,1,0.447,1,1S39.552,28,39,28z" data-original="#FFFFFF" class="active-path"/>
+                  <polygon style="fill:#FFFFFF" points="30.707,37.707 29.293,36.293 38.586,27 29.293,17.707 30.707,16.293 41.414,27  " data-original="#FFFFFF" class="active-path"/>
+              </g></g>
+            </svg>
         </button>
       </li>
       <template v-for="(item, index) in settings.array">
-        <li class="pagination-list__li" v-if="test(index).li">
+        <li class="pagination-list__li" v-if="test(index).li" :key="index">
           <template v-if="test(index).button">
             <button
               :class="[
                 {'pagination-list__button_page_active': curIndex === index }
               ]"
               :style="[
-                  settings.pageButtons ? {'background': settings.pageButtons.background} : {'background': '#fff'},
-                  settings.pageButtons ? {'borderColor': settings.pageButtons.borderColor} : {'border-color': '#02C8F3'},
-                  settings.pageButtons ? {'color': settings.pageButtons.color} : {'color': '#02C8F3'}
               ]"
               @click="[
                 switch_page(index)
@@ -41,23 +65,54 @@
             </button>
           </template>
           <template v-else>
-            ...
+            <div class="pagination-list__button_dots"
+                 :class="styleDots()">
+              ...
+            </div>
           </template>
         </li>
       </template>
       <li class="pagination-list__li">
         <button
                 v-if="settings.hideArrows != true"
-                @click="switch_page(curIndex + 1)"
+                @click="[
+                  switch_page(curIndex + 1)
+                  ]"
                 class="pagination-list__button pagination-list__arrow pagination-list__arrow_next"
                 :class="[
-                  {'pagination-list__button_disabled': curIndex === settings.array.length - 1}
+                  {'pagination-list__button_disabled': curIndex === settings.array.length - 1},
+                  styleArrows()
                 ]"
                 :style="[
-                    settings.arrowColor ? {'border-color': settings.arrowColor} : {'border-color': '#e1e1e1'}
                 ]"
           >
-          &raquo;
+            <svg v-if="this.settings.arrowStyle === 'styleArrow-1'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
+                <g>
+                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0    C53,41.359,41.359,53,27,53z" data-original="#57B0E3" class=""/>
+                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,54C12.112,54,0,41.888,0,27S12.112,0,27,0s27,12.112,27,27S41.888,54,27,54z M27,2    C13.215,2,2,13.215,2,27s11.215,25,25,25s25-11.215,25-25S40.785,2,27,2z" data-original="#57B0E3" class=""/>
+                </g>
+                  <path style="fill:#FFFFFF" d="M27,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L37.586,27L26.293,15.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418L27.707,39.707   C27.512,39.902,27.256,40,27,40z" data-original="#FFFFFF" class="active-path"/>
+                  <path style="fill:#FFFFFF" d="M17,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L27.586,27L16.293,15.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418L17.707,39.707   C17.512,39.902,17.256,40,17,40z" data-original="#FFFFFF" class="active-path"/>
+              </g></g>
+            </svg>
+          <svg v-else-if="this.settings.arrowStyle === 'styleArrow-2'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
+              <g>
+                <rect x="1" y="1" :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" width="52" height="52" data-original="#687492" class=""/>
+                <path style="fill:#fff" d="M54,54H0V0h54V54z M2,52h50V2H2V52z" data-original="#687492" class=""/>
+              </g>
+              <path style="fill:#FFFFFF" d="M19,45c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L34.586,27L18.293,10.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L37.414,27L19.707,44.707C19.512,44.902,19.256,45,19,45z" data-original="#FFFFFF" class="active-path"/>
+            </g></g>
+          </svg>
+
+            <svg v-else xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px"><g><g>
+                <g>
+                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0    C53,41.359,41.359,53,27,53z" data-original="#9B507E"/>
+                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,54C12.112,54,0,41.888,0,27S12.112,0,27,0s27,12.112,27,27S41.888,54,27,54z M27,2    C13.215,2,2,13.215,2,27s11.215,25,25,25s25-11.215,25-25S40.785,2,27,2z" data-original="#9B507E"/>
+                </g>
+                  <path style="fill:#FFFFFF" d="M39,28H13c-0.552,0-1-0.447-1-1s0.448-1,1-1h26c0.552,0,1,0.447,1,1S39.552,28,39,28z" data-original="#FFFFFF" class="active-path"/>
+                  <polygon style="fill:#FFFFFF" points="30.707,37.707 29.293,36.293 38.586,27 29.293,17.707 30.707,16.293 41.414,27  " data-original="#FFFFFF" class="active-path"/>
+              </g></g>
+            </svg>
         </button>
       </li>
     </ul>
@@ -70,7 +125,8 @@ export default {
     return {
       curIndex: 0,
       activeItemId: '',
-      show: ''
+      show: '',
+      testing: ''
     }
   },
   props: ['settings'],
@@ -87,6 +143,30 @@ export default {
     }
   },
   methods: {
+    keydown: function (e) {
+      if (e.ctrlKey && e.which === 39 && this.curIndex < this.settings.array.length - 1) {
+        this.switch_page(this.curIndex + 1)
+      }
+      if (e.ctrlKey && e.which === 37 && this.curIndex > 0) {
+        this.switch_page(this.curIndex - 1)
+      }
+    },
+    styleDots: function () {
+      if (this.settings.controlDotsStyle === 'style1') {
+        return 'pagination-list__button_dots-style-1'
+      } else if (this.settings.controlDotsStyle === 'style2') {
+        return 'pagination-list__button_dots-style-2'
+      }
+    },
+    styleArrows: function () {
+      if (this.settings.arrowStyle === 'styleArrow-1') {
+        return 'styleArrow-1'
+      } else if (this.settings.arrowStyle === 'styleArrow-2') {
+        return 'styleArrow-2'
+      } else {
+        return 'styleArrow-3'
+      }
+    },
     switch_page: function (index) {
       this.curIndex = index
       for (let i = 0; i < this.settings.array.length; i++) {
@@ -177,19 +257,46 @@ export default {
     }
   },
   beforeMount () {
-    this.$set(this.settings.array[0], 'active', true)
-    let root = document.querySelector(':root')
-    if (this.settings.arrowColor) {
-      root.style.setProperty('--arrowColor', this.settings.arrowColor)
+    document.addEventListener('keydown', this.keydown)
+    if (this.settings.pageStarted) {
+      this.$set(this.settings.array[this.settings.pageStarted], 'active', true)
     }
+    let root = document.querySelector(':root')
     if (this.settings.controlStyle === 'square') {
       root.style.setProperty('--controlStyle', '0')
-    }
-    if (this.settings.controlStyle === 'circle') {
+    } else if (this.settings.controlStyle === 'circle') {
       root.style.setProperty('--controlStyle', '50%')
     } else {
       root.style.setProperty('--controlStyle', '4px')
     }
+    if (this.settings.pageButtons.background) {
+      root.style.setProperty('--pageButtonsBackground', this.settings.pageButtons.background)
+    }
+    if (this.settings.pageButtons.borderColor) {
+      root.style.setProperty('--pageButtonsBorderColor', this.settings.pageButtons.borderColor)
+    }
+    if (this.settings.pageButtons.color) {
+      root.style.setProperty('--pageButtonsColor', this.settings.pageButtons.color)
+    }
+    if (this.settings.pageButtons.backgroundHover) {
+      root.style.setProperty('--pageButtonsBackgroundHover', this.settings.pageButtons.backgroundHover)
+    }
+    if (this.settings.pageButtons.borderColorHover) {
+      root.style.setProperty('--pageButtonsBorderColorHover', this.settings.pageButtons.borderColorHover)
+    }
+    if (this.settings.pageButtons.colorHover) {
+      root.style.setProperty('--pageButtonsColorHover', this.settings.pageButtons.colorHover)
+    }
+    if (this.settings.currentPageButton.backgroundActive) {
+      root.style.setProperty('--pageButtonBackgroundActive', this.settings.currentPageButton.backgroundActive)
+    }
+    if (this.settings.currentPageButton.borderColorActive) {
+      root.style.setProperty('--pageButtonBorderColorActive', this.settings.currentPageButton.borderColorActive)
+    }
+    if (this.settings.currentPageButton.colorActive) {
+      root.style.setProperty('--pageButtonColorActive', this.settings.currentPageButton.colorActive)
+    }
+    // arrow-style
   }
 }
 </script>
@@ -197,8 +304,16 @@ export default {
 <style lang="scss">
 
   :root {
-    --arrowColor: red;
     --controlStyle: 0;
+    --pageButtonsBackground: #fff;
+    --pageButtonsBorderColor: #02C8F3;
+    --pageButtonsColor: #02C8F3;
+    --pageButtonsBackgroundHover: #02C8F3;
+    --pageButtonsBorderColorHover: #e1e1e1;
+    --pageButtonsColorHover: #fff;
+    --pageButtonBackgroundActive: #02C8F3;
+    --pageButtonBorderColorActive: #e1e1e1;
+    --pageButtonColorActive: #fff;
   }
 
   .pagination-list {
@@ -227,15 +342,14 @@ export default {
       justify-content: center;
       width: 40px;
       height: 40px;
-      background-color: #ffffff;
-      color: #9da0a2;
-      /*color: var(--arrowColor);*/
       transition: border-color .2s ease-in, background-color .2s ease-in;
       cursor: pointer;
-      /*border-radius: 4px;*/
       outline: none;
-      border: solid 1px #e1e1e1;
       border-radius: var(--controlStyle);
+      background: var(--pageButtonsBackground);
+      &:hover {
+        background-color: var(--pageButtonsBackgroundHover);
+      }
       &_disabled {
         opacity: 0;
         pointer-events: none;
@@ -243,20 +357,19 @@ export default {
 
       &_page {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        color: #02C8F3;
-        border: 1px solid #02C8F3;
+        border: solid 1px var(--pageButtonsBorderColor);
+        color: var(--pageButtonsColor);
         font-size: 15px;
 
         &:hover{
-          border-color: #02C8F3;
-          color: #ffffff;
-          background-color: #02C8F3;
+          border-color: var(--pageButtonsBorderColorHover);
+          color: var(--pageButtonsColorHover);
         }
 
         &_active {
-          border-color: #e1e1e1;
-          color: #ffffff;
-          background-color: #02C8F3;
+          border-color: var(--pageButtonBorderColorActive);
+          color: var(--pageButtonColorActive);
+          background-color: var(--pageButtonBackgroundActive);
           pointer-events: none;
 
           &:focus {
@@ -270,16 +383,28 @@ export default {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         color: #02C8F3;
         background: none;
+        &-style-1 {
+          color: #fff;
+          height: 40px;
+        }
+        &-style-2 {
+          color: #000;
+          height: 40px;
+        }
       }
     }
 
     &__arrow {
       font-size: 18px;
-      background: none;
-      transition: opacity .2s ease-in;
+      background: var(--pageArrowsBackground);
+      color: var(--pageArrowsColor);
+      transition: opacity, background .2s ease-in;
+      border: 1px solid var(--pageArrowsBorderColor);
+      padding: 0;
+      border: none;
 
       &:focus, &:active {
-        border-color: #e1e1e1;
+        border-color: var(--pageArrowsBorderColorHover);
       }
 
       &_prev {
@@ -287,7 +412,9 @@ export default {
       }
 
       &:hover {
-        color: #02C8F3;
+        background: var(--pageArrowsBackgroundHover);
+        border-color: var(--pageArrowsBorderColorHover);
+        color: var(--pageArrowsColorHover);
       }
 
       &_text {
@@ -304,19 +431,54 @@ export default {
 
   .pagination-block {
     width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    margin: 20px 0;
     user-select: none;
-
+    overflow: hidden;
+    position: relative;
     &__page {
-      border: solid 1px #e1e1e1;
-      margin-bottom: 30px;
-      padding: 50px;
+      font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+      font-size: 92px;
+      padding: 80px 50px;
       text-align: center;
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      font-size: 20px;
-    }
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
 
+      &_shadow {
+        color: #131313;
+        background-color: #e7e5e4;
+        letter-spacing: .15em;
+        text-shadow:
+          1px -1px 0 #767676,
+          -1px 2px 1px #737272,
+          -2px 4px 1px #767474,
+          -3px 6px 1px #787777,
+          -4px 8px 1px #7b7a7a,
+          -5px 10px 1px #7f7d7d,
+          -6px 12px 1px #828181,
+          -7px 14px 1px #868585,
+          -8px 16px 1px #8b8a89,
+          -9px 18px 1px #8f8e8d,
+          -10px 20px 1px #949392,
+          -11px 22px 1px #999897,
+          -12px 24px 1px #9e9c9c,
+          -13px 26px 1px #a3a1a1,
+          -14px 28px 1px #a8a6a6,
+          -15px 30px 1px #adabab,
+          -16px 32px 1px #b2b1b0,
+          -17px 34px 1px #b7b6b5,
+          -18px 36px 1px #bcbbba,
+          -19px 38px 1px #c1bfbf,
+          -20px 40px 1px #c6c4c4,
+          -21px 42px 1px #cbc9c8,
+          -22px 44px 1px #cfcdcd,
+          -23px 46px 1px #d4d2d1,
+          -24px 48px 1px #d8d6d5,
+          -25px 50px 1px #dbdad9,
+          -26px 52px 1px #dfdddc,
+          -27px 54px 1px #e2e0df,
+          -28px 56px 1px #e4e3e2;
+      }
+    }
     &__navigation {
       display: flex;
       align-items: center;
@@ -329,6 +491,12 @@ export default {
     img{
       max-width: 100%;
       height: auto;
+    }
+  }
+  svg{
+    transition: .2s;
+    &:hover {
+      opacity:.7;
     }
   }
 </style>
