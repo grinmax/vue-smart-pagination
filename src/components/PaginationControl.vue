@@ -17,8 +17,6 @@
                   {'pagination-list__button_disabled': curIndex === 0},
                   styleArrows()
                 ]"
-                :style="[
-                ]"
         >
           <svg v-if="this.settings.arrowStyle === 'styleArrow-1'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
                 <g>
@@ -37,26 +35,23 @@
               <path style="fill:#FFFFFF" d="M19,45c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L34.586,27L18.293,10.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L37.414,27L19.707,44.707C19.512,44.902,19.256,45,19,45z" data-original="#FFFFFF" class="active-path"/>
             </g></g>
           </svg>
-
-            <svg v-else xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px"><g><g>
-                <g>
-                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0    C53,41.359,41.359,53,27,53z" data-original="#9B507E"/>
-                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,54C12.112,54,0,41.888,0,27S12.112,0,27,0s27,12.112,27,27S41.888,54,27,54z M27,2    C13.215,2,2,13.215,2,27s11.215,25,25,25s25-11.215,25-25S40.785,2,27,2z" data-original="#9B507E"/>
-                </g>
-                  <path style="fill:#FFFFFF" d="M39,28H13c-0.552,0-1-0.447-1-1s0.448-1,1-1h26c0.552,0,1,0.447,1,1S39.552,28,39,28z" data-original="#FFFFFF" class="active-path"/>
-                  <polygon style="fill:#FFFFFF" points="30.707,37.707 29.293,36.293 38.586,27 29.293,17.707 30.707,16.293 41.414,27  " data-original="#FFFFFF" class="active-path"/>
-              </g></g>
-            </svg>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px"><g><g>
+              <g>
+                <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0    C53,41.359,41.359,53,27,53z" data-original="#9B507E"/>
+                <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,54C12.112,54,0,41.888,0,27S12.112,0,27,0s27,12.112,27,27S41.888,54,27,54z M27,2    C13.215,2,2,13.215,2,27s11.215,25,25,25s25-11.215,25-25S40.785,2,27,2z" data-original="#9B507E"/>
+              </g>
+                <path style="fill:#FFFFFF" d="M39,28H13c-0.552,0-1-0.447-1-1s0.448-1,1-1h26c0.552,0,1,0.447,1,1S39.552,28,39,28z" data-original="#FFFFFF" class="active-path"/>
+                <polygon style="fill:#FFFFFF" points="30.707,37.707 29.293,36.293 38.586,27 29.293,17.707 30.707,16.293 41.414,27  " data-original="#FFFFFF" class="active-path"/>
+            </g></g>
+          </svg>
         </button>
       </li>
       <template v-for="(item, index) in settings.array">
-        <li class="pagination-list__li" v-if="test(index).li" :key="index">
-          <template v-if="test(index).button">
+        <li class="pagination-list__li" v-if="pagination(index).li" :key="index">
+          <template v-if="pagination(index).button">
             <button
               :class="[
-                {'pagination-list__button_page_active': curIndex === index }
-              ]"
-              :style="[
+                {'pagination-list__button_page_active': curIndex === index}
               ]"
               @click="[
                 switch_page(index)
@@ -83,8 +78,6 @@
                   {'pagination-list__button_disabled': curIndex === settings.array.length - 1},
                   styleArrows()
                 ]"
-                :style="[
-                ]"
           >
             <svg v-if="this.settings.arrowStyle === 'styleArrow-1'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
                 <g>
@@ -95,15 +88,14 @@
                   <path style="fill:#FFFFFF" d="M17,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L27.586,27L16.293,15.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418L17.707,39.707   C17.512,39.902,17.256,40,17,40z" data-original="#FFFFFF" class="active-path"/>
               </g></g>
             </svg>
-          <svg v-else-if="this.settings.arrowStyle === 'styleArrow-2'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
-              <g>
-                <rect x="1" y="1" :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" width="52" height="52" data-original="#687492" class=""/>
-                <path style="fill:#fff" d="M54,54H0V0h54V54z M2,52h50V2H2V52z" data-original="#687492" class=""/>
-              </g>
-              <path style="fill:#FFFFFF" d="M19,45c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L34.586,27L18.293,10.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L37.414,27L19.707,44.707C19.512,44.902,19.256,45,19,45z" data-original="#FFFFFF" class="active-path"/>
-            </g></g>
-          </svg>
-
+            <svg v-else-if="this.settings.arrowStyle === 'styleArrow-2'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
+                <g>
+                  <rect x="1" y="1" :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" width="52" height="52" data-original="#687492" class=""/>
+                  <path style="fill:#fff" d="M54,54H0V0h54V54z M2,52h50V2H2V52z" data-original="#687492" class=""/>
+                </g>
+                <path style="fill:#FFFFFF" d="M19,45c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L34.586,27L18.293,10.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L37.414,27L19.707,44.707C19.512,44.902,19.256,45,19,45z" data-original="#FFFFFF" class="active-path"/>
+              </g></g>
+            </svg>
             <svg v-else xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px"><g><g>
                 <g>
                   <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0    C53,41.359,41.359,53,27,53z" data-original="#9B507E"/>
@@ -173,8 +165,9 @@ export default {
         this.$set(this.settings.array[i], 'active', false)
       }
       this.$set(this.settings.array[index], 'active', true)
+      this.$emit('callMethod', index)
     },
-    test: function (index) {
+    pagination: function (index) {
       if (index === 0 || index === this.settings.array.length - 1) {
         return {
           li: true,
@@ -259,7 +252,8 @@ export default {
   beforeMount () {
     document.addEventListener('keydown', this.keydown)
     if (this.settings.pageStarted) {
-      this.$set(this.settings.array[this.settings.pageStarted], 'active', true)
+      this.curIndex = this.settings.pageStarted - 1
+      this.$set(this.settings.array[this.settings.pageStarted - 1], 'active', true)
     }
     let root = document.querySelector(':root')
     if (this.settings.controlStyle === 'square') {

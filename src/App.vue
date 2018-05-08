@@ -4,7 +4,7 @@
       <img src="./assets/logo.png">
     </div>
     <pagination-page :settings="settings" />
-    <pagination-control :settings="settings"/>
+    <pagination-control :settings="settings" @callMethod="test"/>
   </div>
 </template>
 
@@ -66,15 +66,22 @@ export default {
       ]
     }
   },
+  methods: {
+    test: function (e) {
+      console.log(e)
+    },
+    callMethod: function (e) {
+      console.log(e)
+    }
+  },
   computed: {
-    settings: function () {
-      return {
-        array: this.pages,
-        maxButtons: 5,
-        pageClass: 'pageClass-test',
-        hideArrows: false,
-        controlStyle: 'circle',
-        controlClass: 'controlClass-test',
+      settings: function () {
+        return {
+          array: this.pages,
+          pageClass: 'pageClass-test1',
+          hideArrows: false,
+          controlStyle: 'default',
+          maxButtons: 5,
         pageButtons: {
           'background': '',
           'borderColor': '',
@@ -88,13 +95,14 @@ export default {
           'borderColorActive': '',
           'colorActive': ''
         },
-        controlDotsStyle: 'style2',
-        arrowStyle: 'styleArrow-1',
+        controlClass: 'controlClass-test',
+        arrowStyle: 'styleArrow-3',
+        controlDotsStyle: 'style3',
         arrowStyleColor: '#02C8F3',
         spinner: true,
         spinnerStyle: 'spinnerStyle-1',
         spinnerColor: 'white',
-        pageStarted: 6
+        pageStarted: 1
       }
     }
   }

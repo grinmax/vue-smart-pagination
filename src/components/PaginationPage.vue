@@ -3,9 +3,9 @@
         <div class="loader">
           <div v-if="this.settings.spinner" :class="loader()"></div>
         </div>
-        <transition-group tag="div" name="slide-fade">
+        <transition-group tag="div" v-bind:css="true" appear name="slide-fade">
           <div class="pagination-block__page pagination-block__page_shadow"
-               v-for="item in this.settings.array" v-if="item.active" :key="item"
+               v-for="(item, index) in settings.array" v-if="item.active" :key="item"
                :class="[
                  settings.pageClass
                ]"
@@ -62,7 +62,7 @@ export default {
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
   }
-  .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  .fade-enter, .fade-leave-to {
     opacity: 0;
   }
   /*animation*/
