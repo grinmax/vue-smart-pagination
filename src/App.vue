@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-    <div class="pagination-img">
-      <img src="./assets/logo.png">
-    </div>
     <pagination-page :settings="settings" />
     <pagination-control :settings="settings" @callMethod="test"/>
   </div>
@@ -75,13 +72,13 @@ export default {
     }
   },
   computed: {
-      settings: function () {
-        return {
-          array: this.pages,
-          pageClass: 'pageClass-test1',
-          hideArrows: false,
-          controlStyle: 'default',
-          maxButtons: 5,
+    settings: function () {
+      return {
+        array: this.pages,
+        pageClass: 'test-class',
+        hideArrows: false,
+        controlStyle: 'default',
+        maxButtons: 5,
         pageButtons: {
           'background': '',
           'borderColor': '',
@@ -95,12 +92,12 @@ export default {
           'borderColorActive': '',
           'colorActive': ''
         },
-        controlClass: 'controlClass-test',
-        arrowStyle: 'styleArrow-3',
-        controlDotsStyle: 'style3',
-        arrowStyleColor: '#02C8F3',
+        controlClass: '',
+        arrowStyle: 'styleArrow-2',
+        controlDotsStyle: 'style1',
+        arrowStyleColor: '#fff',
         spinner: true,
-        spinnerStyle: 'spinnerStyle-1',
+        spinnerStyle: 'spinnerStyle-2',
         spinnerColor: 'white',
         pageStarted: 1
       }

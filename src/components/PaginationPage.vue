@@ -1,7 +1,7 @@
 <template>
       <div class="pagination-block">
-        <div class="loader">
-          <div v-if="this.settings.spinner" :class="loader()"></div>
+        <div v-if="this.settings.spinner" class="loader">
+          <div :class="loader()"></div>
         </div>
         <transition-group tag="div" v-bind:css="true" appear name="slide-fade">
           <div class="pagination-block__page pagination-block__page_shadow"
@@ -42,6 +42,19 @@ export default {
 </script>
 
 <style lang="scss">
+  .pagination-block {
+    position: relative;
+  }
+
+  .test-class {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-family: "Trebuchet MS";
+    margin-bottom: 50px;
+  }
   :root {
     --spinnerColor: #fff;
   }
