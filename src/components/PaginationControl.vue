@@ -18,24 +18,31 @@
                   styleArrows()
                 ]"
         >
-          <svg v-if="this.settings.arrowStyle === 'styleArrow-1'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
-                <g>
-                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0    C53,41.359,41.359,53,27,53z" data-original="#57B0E3" class="qqq"/>
-                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,54C12.112,54,0,41.888,0,27S12.112,0,27,0s27,12.112,27,27S41.888,54,27,54z M27,2    C13.215,2,2,13.215,2,27s11.215,25,25,25s25-11.215,25-25S40.785,2,27,2z" data-original="#57B0E3" class="qqq"/>
-                </g>
-                  <path style="fill:#FFFFFF" d="M27,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L37.586,27L26.293,15.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418L27.707,39.707   C27.512,39.902,27.256,40,27,40z" data-original="#FFFFFF" class="active-path"/>
-                  <path style="fill:#FFFFFF" d="M17,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L27.586,27L16.293,15.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418L17.707,39.707   C17.512,39.902,17.256,40,17,40z" data-original="#FFFFFF" class="active-path"/>
-              </g></g>
-            </svg>
-          <svg v-else-if="this.settings.arrowStyle === 'styleArrow-2'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
+          <svg v-if="this.settings.arrowStyle === 'styleArrow-1'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+               id="Capa_1" x="0px" y="0px" viewBox="0 0 31.49 31.49" style="enable-background:new 0 0 31.49 31.49;"
+               xml:space="preserve" width="40px" height="40px" class="">
+            <g>
+              <path d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"
+                    data-original="#1E201D" class="active-path" data-old_color="#242423" fill="red"/>
+            </g>
+          </svg>
+          <!--<svg v-else-if="this.settings.arrowStyle === 'styleArrow-2'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>-->
+              <!--<g>-->
+                <!--<rect x="1" y="1" :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" width="52" height="52" data-original="#687492" class=""/>-->
+                <!--<path style="fill:#fff" d="M54,54H0V0h54V54z M2,52h50V2H2V52z" data-original="#687492" class=""/>-->
+              <!--</g>-->
+              <!--<path style="fill:#FFFFFF" d="M19,45c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L34.586,27L18.293,10.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L37.414,27L19.707,44.707C19.512,44.902,19.256,45,19,45z" data-original="#FFFFFF" class="active-path"/>-->
+            <!--</g></g>-->
+          <!--</svg>-->
+          <svg v-else-if="this.settings.arrowStyle === 'styleArrow-2'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 284.929 284.929" style="enable-background:new 0 0 284.929 284.929;" xml:space="preserve" class=""><g transform="matrix(-1 1.22465e-16 -1.22465e-16 -1 284.929 284.929)"><g>
               <g>
-                <rect x="1" y="1" :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" width="52" height="52" data-original="#687492" class=""/>
-                <path style="fill:#fff" d="M54,54H0V0h54V54z M2,52h50V2H2V52z" data-original="#687492" class=""/>
+                <path d="M165.304,142.468L277.517,30.267c1.902-1.903,2.847-4.093,2.847-6.567c0-2.475-0.951-4.665-2.847-6.567L263.239,2.857    C261.337,0.955,259.146,0,256.676,0c-2.478,0-4.665,0.955-6.571,2.857L117.057,135.9c-1.903,1.903-2.853,4.093-2.853,6.567    c0,2.475,0.95,4.664,2.853,6.567l133.048,133.043c1.903,1.906,4.086,2.851,6.564,2.851c2.478,0,4.66-0.947,6.563-2.851    l14.277-14.267c1.902-1.903,2.851-4.094,2.851-6.57c0-2.472-0.948-4.661-2.851-6.564L165.304,142.468z" data-original="#000000" class="active-path" fill="#000000"/>
+                <path d="M55.668,142.468L167.87,30.267c1.903-1.903,2.851-4.093,2.851-6.567c0-2.475-0.947-4.665-2.851-6.567L153.6,2.857    C151.697,0.955,149.507,0,147.036,0c-2.478,0-4.668,0.955-6.57,2.857L7.417,135.9c-1.903,1.903-2.853,4.093-2.853,6.567    c0,2.475,0.95,4.664,2.853,6.567l133.048,133.043c1.902,1.906,4.09,2.851,6.57,2.851c2.471,0,4.661-0.947,6.563-2.851    l14.271-14.267c1.903-1.903,2.851-4.094,2.851-6.57c0-2.472-0.947-4.661-2.851-6.564L55.668,142.468z" data-original="#000000" class="active-path" fill="#000000"/>
               </g>
-              <path style="fill:#FFFFFF" d="M19,45c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L34.586,27L18.293,10.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L37.414,27L19.707,44.707C19.512,44.902,19.256,45,19,45z" data-original="#FFFFFF" class="active-path"/>
             </g></g>
           </svg>
-          <svg v-else xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px"><g><g>
+
+          <svg v-else-if="this.settings.arrowStyle === 'styleArrow-3'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px"><g><g>
               <g>
                 <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0    C53,41.359,41.359,53,27,53z" data-original="#9B507E"/>
                 <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,54C12.112,54,0,41.888,0,27S12.112,0,27,0s27,12.112,27,27S41.888,54,27,54z M27,2    C13.215,2,2,13.215,2,27s11.215,25,25,25s25-11.215,25-25S40.785,2,27,2z" data-original="#9B507E"/>
@@ -79,21 +86,27 @@
                   styleArrows()
                 ]"
           >
-            <svg v-if="this.settings.arrowStyle === 'styleArrow-1'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
-                <g>
-                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,53L27,53C12.641,53,1,41.359,1,27v0C1,12.641,12.641,1,27,1h0c14.359,0,26,11.641,26,26v0    C53,41.359,41.359,53,27,53z" data-original="#57B0E3" class=""/>
-                  <path :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" d="M27,54C12.112,54,0,41.888,0,27S12.112,0,27,0s27,12.112,27,27S41.888,54,27,54z M27,2    C13.215,2,2,13.215,2,27s11.215,25,25,25s25-11.215,25-25S40.785,2,27,2z" data-original="#57B0E3" class=""/>
-                </g>
-                  <path style="fill:#FFFFFF" d="M27,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L37.586,27L26.293,15.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418L27.707,39.707   C27.512,39.902,27.256,40,27,40z" data-original="#FFFFFF" class="active-path"/>
-                  <path style="fill:#FFFFFF" d="M17,40c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L27.586,27L16.293,15.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l11.498,11.498c0.667,0.667,0.667,1.751,0,2.418L17.707,39.707   C17.512,39.902,17.256,40,17,40z" data-original="#FFFFFF" class="active-path"/>
-              </g></g>
+            <svg v-if="this.settings.arrowStyle === 'styleArrow-1'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                 id="Capa_1" x="0px" y="0px" viewBox="0 0 31.49 31.49" style="enable-background:new 0 0 31.49 31.49;"
+                 xml:space="preserve" width="40px" height="40px" class="">
+              <g>
+                <path d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"
+                      data-original="#1E201D" class="active-path" data-old_color="#242423" fill="red"/>
+              </g>
             </svg>
-            <svg v-else-if="this.settings.arrowStyle === 'styleArrow-2'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>
+            <!--<svg v-else-if="this.settings.arrowStyle === 'styleArrow-2'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px" class=""><g><g>-->
+                <!--<g>-->
+                  <!--<rect x="1" y="1" :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" width="52" height="52" data-original="#687492" class=""/>-->
+                  <!--<path style="fill:#fff" d="M54,54H0V0h54V54z M2,52h50V2H2V52z" data-original="#687492" class=""/>-->
+                <!--</g>-->
+                <!--<path style="fill:#FFFFFF" d="M19,45c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L34.586,27L18.293,10.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L37.414,27L19.707,44.707C19.512,44.902,19.256,45,19,45z" data-original="#FFFFFF" class="active-path"/>-->
+              <!--</g></g>-->
+            <!--</svg>-->
+            <svg v-else-if="this.settings.arrowStyle === 'styleArrow-2'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 284.929 284.929" style="enable-background:new 0 0 284.929 284.929;" xml:space="preserve" class=""><g transform="matrix(-1 1.22465e-16 -1.22465e-16 -1 284.929 284.929)"><g>
                 <g>
-                  <rect x="1" y="1" :style="[this.settings.arrowStyleColor ? {fill : this.settings.arrowStyleColor} : {fill: '#02C8F3' }]" width="52" height="52" data-original="#687492" class=""/>
-                  <path style="fill:#fff" d="M54,54H0V0h54V54z M2,52h50V2H2V52z" data-original="#687492" class=""/>
+                  <path d="M165.304,142.468L277.517,30.267c1.902-1.903,2.847-4.093,2.847-6.567c0-2.475-0.951-4.665-2.847-6.567L263.239,2.857    C261.337,0.955,259.146,0,256.676,0c-2.478,0-4.665,0.955-6.571,2.857L117.057,135.9c-1.903,1.903-2.853,4.093-2.853,6.567    c0,2.475,0.95,4.664,2.853,6.567l133.048,133.043c1.903,1.906,4.086,2.851,6.564,2.851c2.478,0,4.66-0.947,6.563-2.851    l14.277-14.267c1.902-1.903,2.851-4.094,2.851-6.57c0-2.472-0.948-4.661-2.851-6.564L165.304,142.468z" data-original="#000000" class="active-path" fill="#000000"/>
+                  <path d="M55.668,142.468L167.87,30.267c1.903-1.903,2.851-4.093,2.851-6.567c0-2.475-0.947-4.665-2.851-6.567L153.6,2.857    C151.697,0.955,149.507,0,147.036,0c-2.478,0-4.668,0.955-6.57,2.857L7.417,135.9c-1.903,1.903-2.853,4.093-2.853,6.567    c0,2.475,0.95,4.664,2.853,6.567l133.048,133.043c1.902,1.906,4.09,2.851,6.57,2.851c2.471,0,4.661-0.947,6.563-2.851    l14.271-14.267c1.903-1.903,2.851-4.094,2.851-6.57c0-2.472-0.947-4.661-2.851-6.564L55.668,142.468z" data-original="#000000" class="active-path" fill="#000000"/>
                 </g>
-                <path style="fill:#FFFFFF" d="M19,45c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414L34.586,27L18.293,10.707   c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0L37.414,27L19.707,44.707C19.512,44.902,19.256,45,19,45z" data-original="#FFFFFF" class="active-path"/>
               </g></g>
             </svg>
             <svg v-else xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve" width="40px" height="40px"><g><g>

@@ -77,7 +77,7 @@ export default {
         array: this.pages,
         pageClass: 'test-class',
         hideArrows: false,
-        controlStyle: 'default',
+        controlStyle: 'circle1',
         maxButtons: 5,
         pageButtons: {
           'background': '',
@@ -95,7 +95,7 @@ export default {
         controlClass: '',
         arrowStyle: 'styleArrow-2',
         controlDotsStyle: 'style1',
-        arrowStyleColor: '#fff',
+        arrowStyleColor: 'red',
         spinner: true,
         spinnerStyle: 'spinnerStyle-2',
         spinnerColor: 'white',
