@@ -138,7 +138,6 @@ export default {
   computed: {
     maxButton: function () {
       if (!isNaN(this.settings.maxButtons % 2)) {
-        console.log(this.settings.maxButtons % 2)
         if (this.settings.maxButtons % 2 === 0) {
           return this.settings.maxButtons + 1
         } else return this.settings.maxButtons

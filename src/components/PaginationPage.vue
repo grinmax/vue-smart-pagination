@@ -3,9 +3,9 @@
         <div v-if="this.settings.spinner" class="loader">
           <div :class="loader()"></div>
         </div>
-        <transition-group tag="div" v-bind:css="true" appear name="slide-fade">
+        <transition-group v-bind:css="true" name="slide-fade">
           <div class="pagination-block__page pagination-block__page_shadow"
-               v-for="(item, index) in settings.array" v-if="item.active" :key="item"
+               v-for="(item, index) in settings.array" v-if="item.active" :key="index"
                :class="[
                  settings.pageClass
                ]"
@@ -55,30 +55,34 @@ export default {
     font-family: "Trebuchet MS";
     margin-bottom: 50px;
   }
+
   :root {
     --spinnerColor: #fff;
   }
   body {
     overflow: hidden;
   }
-  /*animation*/
+
   .slide-fade-enter-active {
-    transition: all .3s ease;
+    transition: opacity .3s ease;
   }
-  .slide-fade-leave-active {
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
+
   .slide-fade-enter, .slide-fade-leave-to {
-    transform: translateX(10px);
     opacity: 0;
+    position: absolute;
   }
+
+  .slide-fade-enter-to, .slide-fade-leave {
+    opacity: 1;
+  }
+
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
   }
+
   .fade-enter, .fade-leave-to {
     opacity: 0;
   }
-  /*animation*/
 
   .loader {
     width:100%;
@@ -98,7 +102,7 @@ export default {
       left:0;
     }
   }
-  /*loader-1*/
+
   .loader-1,
   .loader-1:before,
   .loader-1:after {
@@ -108,6 +112,7 @@ export default {
     width: 1em;
     height: 4em;
   }
+
   .loader-1 {
     left: 50%;
     top: 50%;
@@ -118,19 +123,23 @@ export default {
     font-size: 6px;
     animation-delay: -0.16s;
   }
+
   .loader-1:before,
   .loader-1:after {
     position: absolute;
     top: 0;
     content: '';
   }
+
   .loader-1:before {
     left: -1.5em;
     animation-delay: -0.32s;
   }
+
   .loader-1:after {
     left: 1.5em;
   }
+
   @keyframes load1 {
     0%,
     80%,
@@ -143,7 +152,7 @@ export default {
       height: 5em;
     }
   }
-  /*loader-2*/
+
   .loader-2,
   .loader-2:before,
   .loader-2:after {
@@ -155,6 +164,7 @@ export default {
     -webkit-animation: load7 1.8s infinite ease-in-out;
     animation: load7 1.8s infinite ease-in-out;
   }
+
   .loader-2 {
     position: absolute;
     left: 50%;
@@ -166,16 +176,19 @@ export default {
     -webkit-animation-delay: -0.16s;
     animation-delay: -0.16s;
   }
+
   .loader-2:before,
   .loader-2:after {
     content: '';
     position: absolute;
     top: 0;
   }
+
   .loader-2:before {
     left: -3.5em;
     animation-delay: -0.32s;
   }
+
   .loader-2:after {
     left: 3.5em;
   }
@@ -187,10 +200,16 @@ export default {
     }
     40% {
       box-shadow: 0 2.5em 0 0;
+
+  @keyframes load2 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
     }
   }
 
   /*loader-3*/
+
   .loader-3 {
     position: absolute;
     left: 50%;
@@ -203,6 +222,11 @@ export default {
     border-radius: 50%;
     text-indent: -9999em;
     animation: load4 1.3s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
   }
   @keyframes load4 {
     0%,
