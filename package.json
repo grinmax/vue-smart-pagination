@@ -11,7 +11,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "vue": "^2.5.2"
+    "lodash": "^4.17.10",
+    "vue": "^2.5.2",
+    "vue-lodash": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

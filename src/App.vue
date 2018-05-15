@@ -66,40 +66,45 @@ export default {
   methods: {
     test: function (e) {
       console.log(e)
-    },
-    callMethod: function (e) {
-      console.log(e)
     }
   },
   computed: {
     settings: function () {
       return {
         array: this.pages,
-        pageClass: 'test-class',
-        hideArrows: false,
-        controlStyle: 'circle1',
         maxButtons: 5,
-        pageButtons: {
-          'background': '',
-          'borderColor': '',
-          'color': '',
-          'backgroundHover': '',
-          'borderColorHover': '',
-          'colorHover': ''
+        style: {
+          pageButtons: {
+            'background': '',
+            'borderColor': '',
+            'color': '',
+            'backgroundHover': '',
+            'borderColorHover': '',
+            'colorHover': ''
+          },
+          currentPageButton: {
+            'backgroundActive': '',
+            'borderColorActive': '',
+            'colorActive': ''
+          },
+          pageDots: {
+            controlDotsColor: ''
+          },
+          pageArrows: {
+            arrowStyleColorHover: ''
+          }
         },
-        currentPageButton: {
-          'backgroundActive': '',
-          'borderColorActive': '',
-          'colorActive': ''
-        },
-        controlClass: '',
+        hideArrows: false,
         arrowStyle: 'styleArrow-2',
-        controlDotsStyle: 'style1',
-        arrowStyleColor: 'red',
+        arrowStyleColor: '',
+        controlClass: '',
+        pageClass: 'test-class',
         spinner: true,
-        spinnerStyle: 'spinnerStyle-2',
-        spinnerColor: 'white',
-        pageStarted: 1
+        spinnerStyle: 'spinnerStyle-1',
+        spinnerColor: '',
+        controlDotsStyle: 'styleDots-3',
+        pageStarted: 1,
+        animationPage: 'bounce'
       }
     }
   }

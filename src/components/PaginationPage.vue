@@ -1,9 +1,9 @@
 <template>
       <div class="pagination-block">
-        <div v-if="this.settings.spinner" class="loader">
+        <div v-if="this.settings.spinner ? this.settings.spinner : false" class="loader">
           <div :class="loader()"></div>
         </div>
-        <transition-group v-bind:css="true" name="slide-fade">
+        <transition-group appear :css="true" :name="animationPage() ? animationPage() : 'bounce'" mode="out-in">
           <div class="pagination-block__page pagination-block__page_shadow"
                v-for="(item, index) in settings.array" v-if="item.active" :key="index"
                :class="[
@@ -27,8 +27,19 @@ export default {
         return 'loader-1'
       } else if (this.settings.spinnerStyle === 'spinnerStyle-2') {
         return 'loader-2'
-      } else {
+      } else if (this.settings.spinnerStyle === 'spinnerStyle-3') {
         return 'loader-3'
+      } else {
+        return 'loader-1'
+      }
+    },
+    animationPage () {
+      if (this.settings.animationPage === 'slide-fade') {
+        return 'slide-fade'
+      } else if (this.settings.animationPage === 'slide') {
+        return 'slide'
+      } else if (this.settings.animationPage === 'bounce') {
+        return 'bounce'
       }
     }
   },
@@ -44,25 +55,22 @@ export default {
 <style lang="scss">
   .pagination-block {
     position: relative;
+    &__page {
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      font-family: "Trebuchet MS";
+      margin-bottom: 50px;
+    }
   }
-
-  .test-class {
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    font-family: "Trebuchet MS";
-    margin-bottom: 50px;
-  }
-
   :root {
     --spinnerColor: #fff;
   }
   body {
     overflow: hidden;
   }
-
   .slide-fade-enter-active {
     transition: opacity .3s ease;
   }
@@ -75,15 +83,49 @@ export default {
   .slide-fade-enter-to, .slide-fade-leave {
     opacity: 1;
   }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
+  .slide-enter {
+    transform: translateX(100%);
+  }
+  .slide-enter-to {
+    transform: translateX(0);
   }
 
-  .fade-enter, .fade-leave-to {
+  .slide-leave-active {
+    position: absolute;
     opacity: 0;
   }
 
+  .slide-leave {
+    transform: translateX(0);
+  }
+  .slide-leave-to {
+    transform: translateX(-100%);
+  }
+
+  .slide-enter-active,
+  .slide-leave-active {
+    transition: transform .3s ease-out;
+  }
+  .bounce-enter-active {
+    animation: bounce-in .3s ease;
+
+  }
+  .bounce-leave-active {
+    animation: bounce-in .3s reverse;
+    position: absolute;
+    opacity: 0;
+  }
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   .loader {
     width:100%;
     height: 100%;
@@ -91,6 +133,7 @@ export default {
     left: 0;
     top: 0;
     overflow: hidden;
+    z-index: 1;
 
     &:before {
       content: '';
@@ -107,7 +150,6 @@ export default {
   .loader-1:before,
   .loader-1:after {
     background: var(--spinnerColor);
-    -webkit-animation: load1 1s infinite ease-in-out;
     animation: load1 1s infinite ease-in-out;
     width: 1em;
     height: 4em;
@@ -122,6 +164,7 @@ export default {
     position: absolute;
     font-size: 6px;
     animation-delay: -0.16s;
+    z-index: 10;
   }
 
   .loader-1:before,
@@ -159,9 +202,7 @@ export default {
     border-radius: 50%;
     width: 2.5em;
     height: 2.5em;
-    -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    -webkit-animation: load7 1.8s infinite ease-in-out;
     animation: load7 1.8s infinite ease-in-out;
   }
 
@@ -170,11 +211,11 @@ export default {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: #ffffff;
+    color: var(--spinnerColor);
     font-size: 6px;
     text-indent: -9999em;
-    -webkit-animation-delay: -0.16s;
     animation-delay: -0.16s;
+    z-index: 10;
   }
 
   .loader-2:before,
@@ -201,14 +242,13 @@ export default {
     40% {
       box-shadow: 0 2.5em 0 0;
 
-  @keyframes load2 {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
+      @keyframes load2 {
+        0% {
+          transform: rotate(0deg);
+        }
+      }
     }
   }
-
-  /*loader-3*/
 
   .loader-3 {
     position: absolute;
@@ -222,12 +262,9 @@ export default {
     border-radius: 50%;
     text-indent: -9999em;
     animation: load4 1.3s infinite linear;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
+    z-index: 1000;
   }
 
-  }
   @keyframes load4 {
     0%,
     100% {
