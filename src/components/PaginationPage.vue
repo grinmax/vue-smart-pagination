@@ -1,52 +1,83 @@
 <template>
       <div class="pagination-block">
-        <div v-if="this.settings.spinner ? this.settings.spinner : false" class="loader">
+        <div v-if="this.def.spinnerSettings.spinner" class="loader">
           <div :class="loader()"></div>
         </div>
-        <transition-group appear :css="true" :name="animationPage() ? animationPage() : 'bounce'" mode="out-in">
-          <div class="pagination-block__page pagination-block__page_shadow"
-               v-for="(item, index) in settings.array" v-if="item.active" :key="index"
+        <transition-group appear :css="animationPage() ? true : false" :name="animationPage()" mode="out-in">
+          <div class="pagination-block__page"
+               v-for="(item, index) in settings.array_data" v-if="item.active" :key="index"
                :class="[
-                 settings.pageClass
+                 def.pageSettings.pageClass
                ]"
           >
-            <slot>
-              {{ item.content }}
+            <slot name="page" :originalEvent="item">
             </slot>
           </div>
         </transition-group>
       </div>
 </template>
 <script>
+import { defaultsDeep } from 'lodash'
 export default {
   name: 'PaginationPage',
   props: ['settings'],
+  data: function () {
+    return {
+      defValues: {
+        pageSettings: {
+          pageClass: ''
+        },
+        spinnerSettings: {
+          spinner: false,
+          spinnerStyle: 'spinnerStyle-1',
+          spinnerColor: '#fff'
+        },
+        animationSettings: {
+          animationPage: ''
+        }
+      }
+    }
+  },
+  computed: {
+    def: function () {
+      return defaultsDeep(this.settings.PaginationPageSettings, this.defValues)
+    }
+  },
   methods: {
     loader: function () {
-      if (this.settings.spinnerStyle === 'spinnerStyle-1') {
-        return 'loader-1'
-      } else if (this.settings.spinnerStyle === 'spinnerStyle-2') {
-        return 'loader-2'
-      } else if (this.settings.spinnerStyle === 'spinnerStyle-3') {
-        return 'loader-3'
-      } else {
-        return 'loader-1'
+      let spinnerStyle = ''
+      switch (this.def.spinnerSettings.spinnerStyle) {
+        case 'spinnerStyle-1':
+          spinnerStyle = 'loader-1'
+          break
+        case 'spinnerStyle-2':
+          spinnerStyle = 'loader-2'
+          break
+        default:
+          spinnerStyle = 'loader-3'
       }
+      return spinnerStyle
     },
     animationPage () {
-      if (this.settings.animationPage === 'slide-fade') {
-        return 'slide-fade'
-      } else if (this.settings.animationPage === 'slide') {
-        return 'slide'
-      } else if (this.settings.animationPage === 'bounce') {
-        return 'bounce'
+      let animationPage = ''
+      switch (this.def.animationSettings.animationPage) {
+        case 'fade':
+          animationPage = 'fade'
+          break
+        case 'slide':
+          animationPage = 'slide'
+          break
+        case 'bounce':
+          animationPage = 'bounce'
+          break
       }
+      return animationPage
     }
   },
   beforeMount () {
     let root = document.querySelector(':root')
-    if (this.settings.spinnerColor) {
-      root.style.setProperty('--spinnerColor', this.settings.spinnerColor)
+    if (this.def.spinnerSettings.spinnerColor) {
+      root.style.setProperty('--spinnerColor', this.def.spinnerSettings.spinnerColor)
     }
   }
 }
@@ -55,15 +86,11 @@ export default {
 <style lang="scss">
   .pagination-block {
     position: relative;
-    &__page {
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 50px;
-      font-family: "Trebuchet MS";
-      margin-bottom: 50px;
-    }
+    height: 500px;
+    font-size: 60px;
+    text-align: center;
+    color: #000;
+    font-family: "Comic Sans MS", sans-serif;
   }
   :root {
     --spinnerColor: #fff;
@@ -71,16 +98,16 @@ export default {
   body {
     overflow: hidden;
   }
-  .slide-fade-enter-active {
+  .fade-enter-active {
     transition: opacity .3s ease;
   }
 
-  .slide-fade-enter, .slide-fade-leave-to {
+  .fade-enter, .fade-leave-to {
     opacity: 0;
     position: absolute;
   }
 
-  .slide-fade-enter-to, .slide-fade-leave {
+  .fade-enter-to, .fade-leave {
     opacity: 1;
   }
   .slide-enter {
@@ -137,7 +164,7 @@ export default {
 
     &:before {
       content: '';
-      background-color:rgba(0,0,0,.5);
+      background-color:rgba(0, 0, 0, .7);
       height:100%;
       position:absolute;
       width:100%;

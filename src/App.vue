@@ -1,6 +1,15 @@
 <template>
   <div id="app">
-    <pagination-page :settings="settings" />
+    <pagination-page :settings="settings">
+      <div slot="page" slot-scope="item">
+        <template v-if="item.originalEvent.components != undefined">
+          <components :is="item.originalEvent.components"></components>
+        </template>
+        <template v-else>
+          <div >{{item.originalEvent.data}}</div>
+        </template>
+      </div>
+    </pagination-page>
     <pagination-control :settings="settings" @callMethod="test"/>
   </div>
 </template>
@@ -8,57 +17,42 @@
 <script>
 import PaginationPage from './components/PaginationPage'
 import PaginationControl from './components/PaginationControl'
+import test1 from './components/test1.vue'
+import test2 from './components/test2.vue'
+import test3 from './components/test3.vue'
 
 export default {
   name: 'App',
   components: {
     PaginationPage,
-    PaginationControl
+    PaginationControl,
+    test1,
+    test2,
+    test3
   },
   data: function () {
     return {
-      pages: [
+      array_data: [
         {
-          content: 'Page № 1'
+          data: 'apple',
+          components: 'test1'
         },
         {
-          content: 'Page № 2'
+          data: 'banana',
+          components: 'test2'
         },
         {
-          content: 'Page № 3'
+          data: 'orange',
+          components: 'test3'
         },
         {
-          content: 'Page № 4'
+          data: 'apple'
         },
         {
-          content: 'Page № 5'
+          data: 'banana'
         },
         {
-          content: 'Page № 6'
-        },
-        {
-          content: 'Page № 7'
-        },
-        {
-          content: 'Page № 8'
-        },
-        {
-          content: 'Page № 9'
-        },
-        {
-          content: 'Page № 10'
-        },
-        {
-          content: 'Page № 11'
-        },
-        {
-          content: 'Page № 12'
-        },
-        {
-          content: 'Page № 13'
-        },
-        {
-          content: 'Page № 14'
+          data: 'orange'
         }
       ]
     }
@@ -71,40 +65,25 @@ export default {
   computed: {
     settings: function () {
       return {
-        array: this.pages,
-        maxButtons: 5,
-        style: {
-          pageButtons: {
-            'background': '',
-            'borderColor': '',
-            'color': '',
-            'backgroundHover': '',
-            'borderColorHover': '',
-            'colorHover': ''
+        array_data: this.array_data,
+        PaginationControlSettings: {
+          buttonsSettings: {
+            maxButtons: 6
           },
-          currentPageButton: {
-            'backgroundActive': '',
-            'borderColorActive': '',
-            'colorActive': ''
-          },
-          pageDots: {
-            controlDotsColor: ''
-          },
-          pageArrows: {
-            arrowStyleColorHover: ''
+          arrowsSettings: {
+            hideArrows: false,
+            arrowStyle: 'styleArrow-1'
           }
         },
-        hideArrows: false,
-        arrowStyle: 'styleArrow-2',
-        arrowStyleColor: '',
-        controlClass: '',
-        pageClass: 'test-class',
-        spinner: true,
-        spinnerStyle: 'spinnerStyle-1',
-        spinnerColor: '',
-        controlDotsStyle: 'styleDots-3',
-        pageStarted: 1,
-        animationPage: 'bounce'
+        PaginationPageSettings: {
+          spinnerSettings: {
+            spinner: true,
+            spinnerStyle: 'spinnerStyle-3'
+          },
+          animationSettings: {
+            animationPage: 'bounce'
+          }
+        }
       }
     }
   }
