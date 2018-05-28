@@ -194,7 +194,12 @@ test: function (e) {
   
 ### Совместимость с браузером  
 Vue-smart-pagination успешно протестирован в браузерах таких как:   
-* Chrome (66.0)    * Safari (11.1)    * Opera (52.0)    * Firefox (59.0.2)    * Edge (38.14393.0.0)  
+*  Chrome (66.0)
+*  Safari (11.1)
+*  Opera (52.0) 
+*  Firefox (59.0.2)
+*  Edge (38.14393.0.0)  
+
 
 
 
