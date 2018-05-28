@@ -2,7 +2,10 @@
 # Vue-smart-pagination
  Данный компонент представляет из себя пагинацию страниц, которые объеденены в категории, условно разделенные на отдельные части с помощью нумерации.    
 
-![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/logo.png)
+## Demo  
+![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.jpg)
+
+[ссылка на демо](http://github.webfriends.by/vue-smart-pagination/)
 
 ## Installation
  ### NPM Установите пакет npm.    
@@ -12,28 +15,27 @@ $ npm install vue-smart-pagination --save
  Зарегистрируйте компонент.    
 * **ES5** 
 ```js
-var Pagination= require('vue-smart-pagination') Vue.component(pagination, Pagination)
+var Pagination= require('vue-smart-pagination')
+Vue.component(pagination, Pagination)
  ```
 * **ES6**
 ```js
-  import Pagination from 'vue-smart-pagination' Vue.component('pagination', Pagination)
+import Pagination from 'vue-smart-pagination'
+Vue.component('pagination', Pagination)
 ```
   ## Usage
 Vue-smart-pagination состоит из двух основных компонентов:   **PaginationPage** - отвечает за вывод контента страницы.  **PaginationControl** - выводит кнопки контроля пагинацей.  Оба компонента регистрируются глобально после установки плагина.  Также существуют два основных объекта - `PaginationControlSettings` и  `PaginationPageSettings`. `PaginationControlSettings` содержит настройки, относящиеся к управлению кнопок, стрелок, точек  и стартовой страницы. `PaginationPageSettings`
- содержит настройки, относящиеся к управлению класса страницы, спиннера и анимации.  Все они передаются через **props** - `“:settings="settings”`. Массив **array_data** служит для вывода данных на страницу и  `является обязательным для заполнения`.
+ содержит настройки, относящиеся к управлению класса страницы, спиннера и анимации.  Все они передаются через **props** - `:settings="settings”`. Массив **array_data** служит для вывода данных на страницу и  `является обязательным для заполнения`.
   
 **Пример:**  
 ```js 
 <template>  
   <div id="app">  
     <pagination-page :settings="settings">  
-      <div slot="page" slot-scope="item">  
-	  </div>
-	</div>
+      <div slot="page" slot-scope="item"></div>  
     </pagination-page>
-      <pagination-control :settings="settings" @callMethod="test"/>  
-      </div>
-    </div>
+    <pagination-control :settings="settings" @callMethod="test"/>  
+    </pagination-control>
   </div>
 </template> 
 
@@ -122,9 +124,10 @@ export default {
   }
 </script>
 ```
-* Для вывода данных на страницу необходимо:
+**Для вывода данных на страницу необходимо:**
 
 В массив `array_data` внести свои переменные (для вывода компонента переменной присваивается его название), затем в компоненте pagination-page записать их. Обращаемся к массиву элементов, указываем свойство originalEvent для вывода текущих данных и собственно саму переменную. Для вывода обычных данных используется `<div>`, а для компонентов - `<component>`. Строка `<div slot="page" slot-scope="item"></div>` является обязательной.
+
 **Пример:**
 ```
 array_data: [  
@@ -137,12 +140,13 @@ array_data: [
 ```
 <pagination-page :settings="settings">
   <div slot="page" slot-scope="item">
-    <div >{{item.originalEvent.data}}</div>
+    <div>{{item.originalEvent.data}}</div>
     <components :is="item.originalEvent.components"></components>
   </div>
 </pagination-page>
 ```
-* Для вывода кнопок пагинации вставляем в шаблон компонент `pagination-control`.
+**Для вывода кнопок пагинации вставляем в шаблон компонент `pagination-control`.**
+
 **Пример:**
 ```
 <pagination-control :settings="settings">
@@ -156,8 +160,18 @@ array_data: [
  *controlClass*| String | - | - | Задает общий класс родительскому блоку с кнопками пагинации.  
 *controlStyle* | String | square, circle, default | default |Задает вид кнопкам пагинации.  
 *maxButtons* | Number | - | 5 |Задаёт максимальное количество кнопок пагинации на странице.  
-*allpageButtonsStyle* | String | background: '', borderColor: '', color: '', backgroundHover: '',  borderColorHover : '', colorHover: '', fontFamily: '' | background: ‘#fff’, borderColor: ‘#02C8F3’, color: '#02C8F3', backgroundHover: ‘#02C8F3’, borderColorHover : ‘#02C8F3’, colorHover: ‘#fff’, fontFamily: 'Avenir' | background - Задает задний фон кнопкам пагинации; borderColor - Задает цвет рамки кнопкам пагинации;  color - Задает цвет кнопкам пагинации; backgroundHover - Задает задний фон кнопкам пагинации при наведении;  borderColorHover - Задает цвет рамки кнопкам пагинации  при наведении; colorHover - Задает цвет кнопкам пагинации при наведении; fontFamily - Задает шрифт кнопкам.  
-*currentPageButtonStyle* | String | backgroundActive: '', borderColorActive: '', colorActive: '' | backgroundActive: '#02C8F3', borderColorActive: '#02C8F3', colorActive: '#fff'  | backgroundActive - Задает задний фон активной кнопке; borderColorActive - Задает цвет рамки активной кнопке; colorActive - Задает цвет активной кнопке.  
+**allpageButtonsStyle** |
+background | String | - | #fff | background - Задает задний фон кнопкам пагинации
+borderColor | String | - | #02C8F3 | borderColor - Задает цвет рамки кнопкам пагинации
+color| String | - | #02C8F3 | color - Задает цвет кнопкам пагинации
+backgroundHover| String | - | #02C8F3 | backgroundHover - Задает задний фон кнопкам пагинации при наведении
+borderColorHover | String | - | #02C8F3 | borderColorHover - Задает цвет рамки кнопкам пагинации  при наведении
+colorHover | String | - | #fff | colorHover - Задает цвет кнопкам пагинации при наведении
+fontFamily| String | - | Avenir | fontFamily - Задает шрифт кнопкам
+**currentPageButtonStyle** |
+backgroundActive | String | - | #02C8F3 | backgroundActive - Задает задний фон активной кнопке
+borderColorActive| String | - | #02C8F3 | borderColorActive - Задает цвет рамки активной кнопке
+colorActive| String | - | #fff| colorActive - Задает цвет активной кнопке
 **Arrows settings:**|
  *hideArrows* | Boolean | true, false | false | Показывает либо скрывает стрелки пагинации.  
 *arrowStyle* | String | styleArrow-1, styleArrow-2, styleArrow-3 | styleArrow-2 | Меняет вид стрелок.  
@@ -199,8 +213,5 @@ Vue-smart-pagination успешно протестирован в браузер
 *  Edge (38.14393.0.0)  
 
 ## Лицензия  
-LLC WebFriends. 2018  
-  
-## Demo  
-![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.jpg)
+LLC WebFriends. 2018
 

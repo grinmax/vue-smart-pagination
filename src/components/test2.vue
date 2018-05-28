@@ -1,6 +1,6 @@
 <template>
   <div>
-    components 2
+    Page 2
   </div>
 </template>
 <script>
