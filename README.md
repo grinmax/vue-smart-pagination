@@ -20,9 +20,6 @@ var Pagination= require('vue-smart-pagination') Vue.component(pagination, Pagina
 ```
   ## Usage
 Vue-smart-pagination состоит из двух основных компонентов:   **PaginationPage** - отвечает за вывод контента страницы.  **PaginationControl** - выводит кнопки контроля пагинацей.  Оба компонента регистрируются глобально после установки плагина.  Также существуют два основных объекта - `PaginationControlSettings` и  `PaginationPageSettings`. `PaginationControlSettings` содержит настройки, относящиеся к управлению кнопок, стрелок, точек  и стартовой страницы. `PaginationPageSettings`
-
-
-
  содержит настройки, относящиеся к управлению класса страницы, спиннера и анимации.  Все они передаются через **props** - `“:settings="settings”`. Массив **array_data** служит для вывода данных на страницу и  `является обязательным для заполнения`.
   
 **Пример:**  
@@ -47,81 +44,82 @@ export default {
   name: 'App',  
   components: {  
     PaginationPage,  
-	PaginationControl
+    PaginationControl
   },
   data: function () {  
-  return {  
-    array_data: [  
-      {  
-        data: 'apple',  
-		    components: 'test1'  
-	  },  
-	  {  
-        data: 'banana',  
-		    components: 'test2'  
-	  },  
-	  {  
-        data: 'orange',  
-		    components: 'test3'  
-	  }  
-    ]  
+    return {  
+      array_data: [  
+        {  
+          data: 'apple',  
+          components: 'test1'  
+        }, 
+        {  
+          data: 'banana',  
+          components: 'test2'  
+        },  
+        {  
+          data: 'orange',  
+          components: 'test3'  
+        }  
+      ] 
+    } 
   },
   methods: {  
     test: function (e) {  
-	  console.log(e)  
-	}  
+      console.log(e)  
+    }  
   },
   computed: {  
-  settings: function () {  
-    return {  
-      array_data: this.array_data,
-      PaginationControlSettings: {
-      buttonsSettings: {
-        controlClass: '',
-        controlStyle: '',
-        maxButtons: 3,
-      allPageButtonsStyle: {
-        'background': '',
-        'borderColor': '',
-        'color': '',
-        'backgroundHover': '',
-        'borderColorHover': '',
-        'colorHover': '',
-        'fontFamily': ''
-      },
-      currentPageButtonStyle: {
-        'backgroundActive': '',
-        'borderColorActive': '',
-        'colorActive': ''
-      },
-      arrowsSettings: {
-        hideArrows: false,
-        arrowStyle: '',
-        arrowStyleColor: '',
-        arrowStyleColorHover: ''
-      },
-      dotsSettings: {
-        controlDotsStyle: '',
-        controlDotsColor: ''
-      },
-      pageStarted: 1
-      },
-      PaginationPageSettings: {
-      pageSettings: {
-        pageClass: ''
-      },
-      spinnerSettings: {
-        spinner: true,
-        spinnerStyle: '',
-        spinnerColor: ''
-      },
-      animationSettings: {
-        animationPage: ''
+    settings: function () {  
+      return {  
+        array_data: this.array_data,
+        PaginationControlSettings: {
+          buttonsSettings: {
+            controlClass: '',
+            controlStyle: '',
+            maxButtons: 3,
+            allPageButtonsStyle: {
+            'background': '',
+            'borderColor': '',
+            'color': '',
+            'backgroundHover': '',
+            'borderColorHover': '',
+            'colorHover': '',
+            'fontFamily': ''
+          },
+          currentPageButtonStyle: {
+            'backgroundActive': '',
+            'borderColorActive': '',
+            'colorActive': ''
+          },
+          arrowsSettings: {
+            hideArrows: false,
+            arrowStyle: '',
+            arrowStyleColor: '',
+            arrowStyleColorHover: ''
+          },
+          dotsSettings: {
+            controlDotsStyle: '',
+            controlDotsColor: ''
+          },
+          pageStarted: 1
+          },
+        PaginationPageSettings: {
+          pageSettings: {
+            pageClass: ''
+          },
+          spinnerSettings: {
+            spinner: true,
+            spinnerStyle: '',
+            spinnerColor: ''
+          },
+          animationSettings: {
+            animationPage: ''
+          }
+        }
       }
+    }
   }
-	}
-  }
-}
 </script>
 ```
 * Для вывода данных на страницу необходимо:
