@@ -286,33 +286,40 @@ export default {
           }
         }
       }
+    },
+    rootColor: function () {
+      let root = document.querySelector(':root')
+      if (this.def.buttonsSettings.controlStyle === 'square') {
+        root.style.setProperty('--controlStyle', '0')
+      } else if (this.def.buttonsSettings.controlStyle === 'circle') {
+        root.style.setProperty('--controlStyle', '50%')
+      } else {
+        root.style.setProperty('--controlStyle', '4px')
+      }
+      root.style.setProperty('--pageButtonsBackground', this.def.buttonsSettings.allPageButtonsStyle.background)
+      root.style.setProperty('--pageButtonsBorderColor', this.def.buttonsSettings.allPageButtonsStyle.borderColor)
+      root.style.setProperty('--pageButtonsColor', this.def.buttonsSettings.allPageButtonsStyle.color)
+      root.style.setProperty('--pageButtonsFontFamily', this.def.buttonsSettings.allPageButtonsStyle.fontFamily)
+      root.style.setProperty('--pageButtonsBackgroundHover', this.def.buttonsSettings.allPageButtonsStyle.backgroundHover)
+      root.style.setProperty('--pageButtonsBorderColorHover', this.def.buttonsSettings.allPageButtonsStyle.borderColorHover)
+      root.style.setProperty('--pageButtonsColorHover', this.def.buttonsSettings.allPageButtonsStyle.colorHover)
+      root.style.setProperty('--pageButtonBackgroundActive', this.def.buttonsSettings.currentPageButtonStyle.backgroundActive)
+      root.style.setProperty('--pageButtonBorderColorActive', this.def.buttonsSettings.currentPageButtonStyle.borderColorActive)
+      root.style.setProperty('--pageButtonColorActive', this.def.buttonsSettings.currentPageButtonStyle.colorActive)
+      root.style.setProperty('--controlDotsColor', this.def.dotsSettings.controlDotsColor)
+      root.style.setProperty('--arrowStyleColorHover', this.def.arrowsSettings.arrowStyleColorHover)
     }
   },
   beforeMount () {
     document.addEventListener('keydown', this.keydown)
-    console.log(this.def.pageStarted)
     this.curIndex = this.def.pageStarted - 1
     this.$set(this.settings.array_data[this.curIndex], 'active', true)
-    let root = document.querySelector(':root')
-    if (this.def.buttonsSettings.controlStyle === 'square') {
-      root.style.setProperty('--controlStyle', '0')
-    } else if (this.def.buttonsSettings.controlStyle === 'circle') {
-      root.style.setProperty('--controlStyle', '50%')
-    } else {
-      root.style.setProperty('--controlStyle', '4px')
+    this.rootColor()
+  },
+  watch: {
+    'def': function (oldVal, newVal) {
+      this.rootColor()
     }
-    root.style.setProperty('--pageButtonsBackground', this.def.buttonsSettings.allPageButtonsStyle.background)
-    root.style.setProperty('--pageButtonsBorderColor', this.def.buttonsSettings.allPageButtonsStyle.borderColor)
-    root.style.setProperty('--pageButtonsColor', this.def.buttonsSettings.allPageButtonsStyle.color)
-    root.style.setProperty('--pageButtonsFontFamily', this.def.buttonsSettings.allPageButtonsStyle.fontFamily)
-    root.style.setProperty('--pageButtonsBackgroundHover', this.def.buttonsSettings.allPageButtonsStyle.backgroundHover)
-    root.style.setProperty('--pageButtonsBorderColorHover', this.def.buttonsSettings.allPageButtonsStyle.borderColorHover)
-    root.style.setProperty('--pageButtonsColorHover', this.def.buttonsSettings.allPageButtonsStyle.colorHover)
-    root.style.setProperty('--pageButtonBackgroundActive', this.def.buttonsSettings.currentPageButtonStyle.backgroundActive)
-    root.style.setProperty('--pageButtonBorderColorActive', this.def.buttonsSettings.currentPageButtonStyle.borderColorActive)
-    root.style.setProperty('--pageButtonColorActive', this.def.buttonsSettings.currentPageButtonStyle.colorActive)
-    root.style.setProperty('--controlDotsColor', this.def.dotsSettings.controlDotsColor)
-    root.style.setProperty('--arrowStyleColorHover', this.def.arrowsSettings.arrowStyleColorHover)
   }
 }
 </script>
