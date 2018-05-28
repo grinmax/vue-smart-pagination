@@ -1,6 +1,7 @@
 
 # Vue-smart-pagination
- A data pagination component that splits any data into pages and has many settings. ``` All data is stored in an array and can have any values.
+ A data pagination component that splits any data into pages and has many settings.
+ All data is stored in an array and can have any values.
 
 ## Demo
 ![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.jpg)
@@ -133,7 +134,7 @@ export default {
 ```
 **Adding Data to a Component:**
 
-In the array `array_data` we add data and output them to the pagination-page. When referring to an array of elements, specify the `originalEvent` property to display the current data.
+In the array `array_data` we add data and output them to the `<pagination-page>`. When referring to an array of elements, specify the `originalEvent` property to display the current data.
 To display simple data, use `<div>`, and for components use `<component>`. `<div slot =" page "slot-scope =" item "> </ div>` is required.
 
 **Example:**
