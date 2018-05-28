@@ -73,13 +73,13 @@ export default {
             components: 'test3'
           },
           {
-            data: 'apple'
+            data: 'Page 4'
           },
           {
-            data: 'banana'
+            data: 'Page 5'
           },
           {
-            data: 'orange'
+            data: 'Page 6'
           }
         ],
         PaginationControlSettings: {
@@ -93,7 +93,7 @@ export default {
         },
         PaginationPageSettings: {
           spinnerSettings: {
-            spinner: true,
+            spinner: false,
             spinnerStyle: 'spinnerStyle-3'
           },
           animationSettings: {

@@ -91,6 +91,9 @@ export default {
     text-align: center;
     color: #000;
     font-family: "Comic Sans MS", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   :root {
     --spinnerColor: #fff;
