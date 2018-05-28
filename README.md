@@ -54,15 +54,15 @@ export default {
     array_data: [  
       {  
         data: 'apple',  
-		components: 'test1'  
+		    components: 'test1'  
 	  },  
 	  {  
         data: 'banana',  
-		components: 'test2'  
+		    components: 'test2'  
 	  },  
 	  {  
         data: 'orange',  
-		components: 'test3'  
+		    components: 'test3'  
 	  }  
     ]  
   },
@@ -73,52 +73,52 @@ export default {
   },
   computed: {  
   settings: function () {  
-    return {  
-	  array_data: this.array_data,
-	  PaginationControlSettings: {
-		buttonsSettings: {
-			controlClass: '',
-			controlStyle: '',
-			maxButtons: 3,
-		allPageButtonsStyle: {
-			'background': '',
-			'borderColor': '',
-			'color': '',
-			'backgroundHover': '',
-			'borderColorHover': '',
-			'colorHover': '',
-			'fontFamily': ''
-		},
-		currentPageButtonStyle: {
-			'backgroundActive': '',
-			'borderColorActive': '',
-			'colorActive': ''
-		},
-		arrowsSettings: {
-			hideArrows: false,
-			arrowStyle: '',
-			arrowStyleColor: '',
-			arrowStyleColorHover: ''
-		},
-		dotsSettings: {
-			controlDotsStyle: '',
-			controlDotsColor: ''
-		},
-		pageStarted: 1
-		},
-	  PaginationPageSettings: {
-		pageSettings: {
-			pageClass: ''
-		},
-		spinnerSettings: {
-			spinner: true,
-			spinnerStyle: '',
-			spinnerColor: ''
-		},
-		animationSettings: {
-			animationPage: ''
-		}
-	  }
+  return {  
+  array_data: this.array_data,
+  PaginationControlSettings: {
+  buttonsSettings: {
+    controlClass: '',
+    controlStyle: '',
+    maxButtons: 3,
+  allPageButtonsStyle: {
+    'background': '',
+    'borderColor': '',
+    'color': '',
+    'backgroundHover': '',
+    'borderColorHover': '',
+    'colorHover': '',
+    'fontFamily': ''
+  },
+  currentPageButtonStyle: {
+    'backgroundActive': '',
+    'borderColorActive': '',
+    'colorActive': ''
+  },
+  arrowsSettings: {
+    hideArrows: false,
+    arrowStyle: '',
+    arrowStyleColor: '',
+    arrowStyleColorHover: ''
+  },
+  dotsSettings: {
+    controlDotsStyle: '',
+    controlDotsColor: ''
+  },
+  pageStarted: 1
+  },
+  PaginationPageSettings: {
+  pageSettings: {
+    pageClass: ''
+  },
+  spinnerSettings: {
+    spinner: true,
+    spinnerStyle: '',
+    spinnerColor: ''
+  },
+  animationSettings: {
+    animationPage: ''
+  }
+  }
 	}
   }
 }
@@ -181,16 +181,17 @@ array_data: [
 ## Method
 > Для вызова собственного метода, при переключении страниц, в компоненте `<pagination-control/>` в action callMethod нужно передать пользовательскую функцию, которая объявляется в объекте methods.  
   
-** Пример: ** ` ` ` <pagination-control @ callMethod =" test "/>    ` ` `  
-   
- 
-  
-` `  `  
- methody: {    
-test: function (e) { 
-  console.log (e) 
-} 
-}    `  ` `
+**Пример:**
+```
+ <pagination-control @ callMethod =" test "/>
+```
+``` 
+methody: {    
+  test: function (e) { 
+    console.log (e) 
+  } 
+}
+```
   
 ### Совместимость с браузером  
 Vue-smart-pagination успешно протестирован в браузерах таких как:   
