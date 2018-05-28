@@ -2,7 +2,7 @@
 # Vue-smart-pagination
  Данный компонент представляет из себя пагинацию страниц, которые объеденены в категории, условно разделенные на отдельные части с помощью нумерации.    
 
-![alt-текст](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Текст заголовка логотипа 1")
+![alt-текст](https://github.com/grinmax/vue-smart-pagination/src/assets/logo2.png)
 
 ## Installation
  ### NPM Установите пакет npm.    
@@ -73,51 +73,51 @@ export default {
   },
   computed: {  
   settings: function () {  
-  return {  
-  array_data: this.array_data,
-  PaginationControlSettings: {
-  buttonsSettings: {
-    controlClass: '',
-    controlStyle: '',
-    maxButtons: 3,
-  allPageButtonsStyle: {
-    'background': '',
-    'borderColor': '',
-    'color': '',
-    'backgroundHover': '',
-    'borderColorHover': '',
-    'colorHover': '',
-    'fontFamily': ''
-  },
-  currentPageButtonStyle: {
-    'backgroundActive': '',
-    'borderColorActive': '',
-    'colorActive': ''
-  },
-  arrowsSettings: {
-    hideArrows: false,
-    arrowStyle: '',
-    arrowStyleColor: '',
-    arrowStyleColorHover: ''
-  },
-  dotsSettings: {
-    controlDotsStyle: '',
-    controlDotsColor: ''
-  },
-  pageStarted: 1
-  },
-  PaginationPageSettings: {
-  pageSettings: {
-    pageClass: ''
-  },
-  spinnerSettings: {
-    spinner: true,
-    spinnerStyle: '',
-    spinnerColor: ''
-  },
-  animationSettings: {
-    animationPage: ''
-  }
+    return {  
+      array_data: this.array_data,
+      PaginationControlSettings: {
+      buttonsSettings: {
+        controlClass: '',
+        controlStyle: '',
+        maxButtons: 3,
+      allPageButtonsStyle: {
+        'background': '',
+        'borderColor': '',
+        'color': '',
+        'backgroundHover': '',
+        'borderColorHover': '',
+        'colorHover': '',
+        'fontFamily': ''
+      },
+      currentPageButtonStyle: {
+        'backgroundActive': '',
+        'borderColorActive': '',
+        'colorActive': ''
+      },
+      arrowsSettings: {
+        hideArrows: false,
+        arrowStyle: '',
+        arrowStyleColor: '',
+        arrowStyleColorHover: ''
+      },
+      dotsSettings: {
+        controlDotsStyle: '',
+        controlDotsColor: ''
+      },
+      pageStarted: 1
+      },
+      PaginationPageSettings: {
+      pageSettings: {
+        pageClass: ''
+      },
+      spinnerSettings: {
+        spinner: true,
+        spinnerStyle: '',
+        spinnerColor: ''
+      },
+      animationSettings: {
+        animationPage: ''
+      }
   }
 	}
   }
