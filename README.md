@@ -1,6 +1,6 @@
 
 # Vue-smart-pagination
- A data pagination component that splits any data into pages and has many settings. All data is stored in an array and can have any value.
+ A data pagination component that splits any data into pages and has many settings. ```All data is stored in an array and can have any values.
 
 ## Demo
 ![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.jpg)
@@ -8,7 +8,7 @@
 [Demo page](http://github.webfriends.by/vue-smart-pagination/)
 
 ## Installation
- ### Install the NPM package.
+ ### Install NPM package.
 ```
 $ npm install vue-smart-pagination --save
  ```
@@ -27,7 +27,7 @@ Vue.component('pagination', Pagination)
 Vue-smart-pagination contains two main components:   **PaginationPage** - has content of the pages.  **PaginationControl** - has content controls.  Both components are registered globally after installing package. Also we have **props** - `:settings="settings”` which has two main objects - `PaginationControlSettings` и  `PaginationPageSettings`.
 `PaginationControlSettings` contains settings related to buttons, arrows, dots and the start page.
 `PaginationPageSettings` contains settings related to the page, the spinner and animation of the content change.
-Array ** array_data ** serves to output data to the page and `is required to fill`.
+Array **array_data** serves to output data to the page and `is required to fill`.
 
 **Example:**
 ```js
@@ -153,7 +153,7 @@ array_data: [
   </div>
 </pagination-page>
 ```
-** To display the pagination buttons, insert the `pagination-control` component into the template. **
+**To display the pagination buttons, insert the `pagination-control` component into the template.**
 
 **Example:**
 ```
@@ -168,22 +168,22 @@ Name | Type | All values | Default value | Description
 *controlStyle* | String | square, circle, default | default | Style of pagination buttons.
 *maxButtons* | Number | - | 5 | The maximum number of pagination buttons on the page.
 **allpageButtonsStyle** |
-*background* | String | - | #fff | Background color of buttons
+*background* | String | - | #ffffff | Background color of buttons
 *borderColor* | String | - | #02C8F3 | Border color of buttons
 *color* | String | - | #02C8F3 | Color of buttons
 *backgroundHover* | String | - | #02C8F3 | Background color of buttons when hovering
 *borderColorHover* | String | - | #02C8F3 | Border color of buttons when hovering
-*colorHover* | String | - | #fff | Color of buttons when hovering
+*colorHover* | String | - | #ffffff | Color of buttons when hovering
 *fontFamily* | String | - | Avenir | Font family of buttons
 **currentPageButtonStyle** |
 *backgroundActive* | String | - | #02C8F3 | Background color of active button
 *borderColorActive* | String | - | #02C8F3 | Border color of active button
-*colorActive* | String | - | #fff| Color of active button
+*colorActive* | String | - | #ffffff| Color of active button
 **Arrows settings:**|
  *hideArrows* | Boolean | true, false | false | Show or hide the arrows of pagination.
 *arrowStyle* | String | styleArrow-1, styleArrow-2, styleArrow-3 | styleArrow-2 | Styles icons of arrow.
 *arrowStyleColor* | String | - | #02C8F3 | Color of arrow.
-*arrowStyleColorHover* | String | - | #fff | Color of arrow when hovering.
+*arrowStyleColorHover* | String | - | #ffffff | Color of arrow when hovering.
 **Dots settings:** |
 *controlDotsStyle* | String | styleDots-1, styleDots-2, styleDots-3 | styleDots-1 | Styles of dots.
 *controlDotsColor* | String | - | #02C8F3 | Color of dots.
@@ -194,7 +194,7 @@ Name | Type | All values | Default value | Description
 **Spinner settings:** |
  *spinner* | Boolean | true, false | false | Show or hide loading spinner.
 *spinnerStyle* | String | spinnerStyle-1, spinnerStyle-2, spinnerStyle-3 | spinnerStyle-3 | Styles for loading spinner.
-*spinnerColor*| String | - | #fff | Color of loading spinner.
+*spinnerColor*| String | - | #ffffff | Color of loading spinner.
 **Animations settings:** |
 *animationPage* | String | fade, slide, bounce, default | default | Animation when switching pages.
 ## Methods
@@ -220,5 +220,5 @@ Vue-smart-pagination has been successfully tested in browsers such as:
 *  Edge (38.14393.0.0)
 
 ## Developers License
-LLC WebFriends. 2018
+Private Enterprise "WebFriends". 2018
 
