@@ -130,16 +130,16 @@ export default {
 array_data: [  
   {  
     data: 'apple',  
-	components: 'test1'
+    components: 'test1'
   }
 ] 
 ```
 ```
 <pagination-page :settings="settings">
-	<div slot="page" slot-scope="item">
-		<div >{{item.originalEvent.data}}</div>
-		<components :is="item.originalEvent.components"></components>
-	</div>
+  <div slot="page" slot-scope="item">
+    <div >{{item.originalEvent.data}}</div>
+    <components :is="item.originalEvent.components"></components>
+  </div>
 </pagination-page>
 ```
 * Для вывода кнопок пагинации вставляем в шаблон компонент `pagination-control`.
@@ -181,7 +181,7 @@ array_data: [
   
 **Пример:**
 ```
- <pagination-control @ callMethod =" test "/>
+<pagination-control @ callMethod =" test "/>
 ```
 ``` 
 methody: {    
