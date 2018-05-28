@@ -202,5 +202,5 @@ Vue-smart-pagination успешно протестирован в браузер
 LLC WebFriends. 2018  
   
 ## Demo  
-![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.png)
+![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.jpg)
 
