@@ -5,7 +5,7 @@
 ## Demo  
 ![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.jpg)
 
-[ссылка на демо](http://github.webfriends.by/vue-smart-pagination/)
+[Ссылка на демо](http://github.webfriends.by/vue-smart-pagination/)
 
 ## Installation
  ### NPM Установите пакет npm.    
@@ -161,17 +161,17 @@ array_data: [
 *controlStyle* | String | square, circle, default | default |Задает вид кнопкам пагинации.  
 *maxButtons* | Number | - | 5 |Задаёт максимальное количество кнопок пагинации на странице.  
 **allpageButtonsStyle** |
-background | String | - | #fff | background - Задает задний фон кнопкам пагинации
-borderColor | String | - | #02C8F3 | borderColor - Задает цвет рамки кнопкам пагинации
-color| String | - | #02C8F3 | color - Задает цвет кнопкам пагинации
-backgroundHover| String | - | #02C8F3 | backgroundHover - Задает задний фон кнопкам пагинации при наведении
-borderColorHover | String | - | #02C8F3 | borderColorHover - Задает цвет рамки кнопкам пагинации  при наведении
-colorHover | String | - | #fff | colorHover - Задает цвет кнопкам пагинации при наведении
-fontFamily| String | - | Avenir | fontFamily - Задает шрифт кнопкам
+*background* | String | - | #fff | Задает задний фон кнопкам пагинации
+*borderColor* | String | - | #02C8F3 | Задает цвет рамки кнопкам пагинации
+*color* | String | - | #02C8F3 | Задает цвет кнопкам пагинации
+*backgroundHover* | String | - | #02C8F3 | Задает задний фон кнопкам пагинации при наведении
+*borderColorHover* | String | - | #02C8F3 | Задает цвет рамки кнопкам пагинации  при наведении
+*colorHover* | String | - | #fff | Задает цвет кнопкам пагинации при наведении
+*fontFamily* | String | - | Avenir | Задает шрифт кнопкам
 **currentPageButtonStyle** |
-backgroundActive | String | - | #02C8F3 | backgroundActive - Задает задний фон активной кнопке
-borderColorActive| String | - | #02C8F3 | borderColorActive - Задает цвет рамки активной кнопке
-colorActive| String | - | #fff| colorActive - Задает цвет активной кнопке
+*backgroundActive* | String | - | #02C8F3 | Задает задний фон активной кнопке
+*borderColorActive* | String | - | #02C8F3 | Задает цвет рамки активной кнопке
+*colorActive* | String | - | #fff| Задает цвет активной кнопке
 **Arrows settings:**|
  *hideArrows* | Boolean | true, false | false | Показывает либо скрывает стрелки пагинации.  
 *arrowStyle* | String | styleArrow-1, styleArrow-2, styleArrow-3 | styleArrow-2 | Меняет вид стрелок.  
