@@ -181,7 +181,7 @@ array_data: [
   
 **Пример:**
 ```
-<pagination-control @ callMethod =" test "/>
+<pagination-control @callMethod =" test "/>
 ```
 ``` 
 methody: {    
@@ -190,7 +190,6 @@ methody: {
   } 
 }
 ```
-  
 ### Совместимость с браузером  
 Vue-smart-pagination успешно протестирован в браузерах таких как:   
 *  Chrome (66.0)
@@ -199,13 +198,9 @@ Vue-smart-pagination успешно протестирован в браузер
 *  Firefox (59.0.2)
 *  Edge (38.14393.0.0)  
 
-
-
-
-
-  
 ## Лицензия  
 LLC WebFriends. 2018  
   
 ## Demo  
-//
+![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.png)
+
