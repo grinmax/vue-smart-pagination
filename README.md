@@ -2,7 +2,7 @@
 # Vue-smart-pagination
  Данный компонент представляет из себя пагинацию страниц, которые объеденены в категории, условно разделенные на отдельные части с помощью нумерации.    
 
-![img](https://github.com/./src/assets/logo.png)
+![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/logo.png)
 
 ## Installation
  ### NPM Установите пакет npm.    
