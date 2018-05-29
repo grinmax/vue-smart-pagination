@@ -23,6 +23,7 @@
         <button @click="maxButtons3()">Количество кнопок 3</button>
         <button @click="maxButtons5()">Количество кнопок 5</button>
         <button @click="buttonsStyle1()">Вид кнопок 1</button>
+        <button @click="buttonsStyle2()">Вид кнопок 2</button>
       </div>
       <div class="spinner">
         <button @click="spinnerShow()">Показать спиннер</button>
@@ -135,9 +136,13 @@ export default {
       this.settings.PaginationControlSettings.buttonsSettings.maxButtons = 5
     },
     buttonsStyle1: function (e) {
-      console.log(this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.background)
       this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.background = '#000'
       this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.borderColor = '#000'
+    },
+    buttonsStyle2: function (e) {
+      this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.background = 'Tomato'
+      this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.borderColor = 'Tomato'
+      this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.color = '#fff'
     },
     arrowShow: function (e) {
       this.settings.PaginationControlSettings.arrowsSettings.hideArrows = false
