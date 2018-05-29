@@ -1,10 +1,11 @@
 
 # Vue-smart-pagination
  A data pagination component that splits any data into pages and has many settings.
+
  All data is stored in an array and can have any values.
 
 ## Demo
-![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.jpg)
+![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.gif)
 
 [Demo page](http://github.webfriends.by/vue-smart-pagination/)
 

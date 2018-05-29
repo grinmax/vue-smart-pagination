@@ -11,7 +11,7 @@
       </div>
     </pagination-page>
     <pagination-control :settings="settings"/>
-    <div class="testing">
+    <!--<div class="testing">
       <div class="arrows">
         <button @click="arrowView1()">Вид стрелок 1</button>
         <button @click="arrowView2()">Вид стрелок 2</button>
@@ -43,7 +43,7 @@
         <button @click="animationView3()">Вид анимации 3</button>
         <button @click="animationNo()">Без анимации</button>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
