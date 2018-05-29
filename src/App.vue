@@ -24,6 +24,11 @@
         <button @click="maxButtons5()">Количество кнопок 5</button>
         <button @click="buttonsStyle1()">Вид кнопок 1</button>
         <button @click="buttonsStyle2()">Вид кнопок 2</button>
+        <button @click="buttonsStyle3()">Вид кнопок 3</button>
+
+        <button @click="currentButtonsStyle1()">Вид текущей кнопки 1</button>
+        <button @click="currentButtonsStyle2()">Вид текущей кнопки 2</button>
+        <button @click="currentButtonsStyle3()">Вид текущей кнопки 3</button>
       </div>
       <div class="spinner">
         <button @click="spinnerShow()">Показать спиннер</button>
@@ -138,11 +143,34 @@ export default {
     buttonsStyle1: function (e) {
       this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.background = '#000'
       this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.borderColor = '#000'
+      this.settings.PaginationControlSettings.arrowsSettings.arrowStyleColor = '#fff'
     },
     buttonsStyle2: function (e) {
       this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.background = 'Tomato'
       this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.borderColor = 'Tomato'
       this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.color = '#fff'
+      this.settings.PaginationControlSettings.arrowsSettings.arrowStyleColor = '#fff'
+    },
+    buttonsStyle3: function (e) {
+      this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.background = '#fff'
+      this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.borderColor = '#02C8F3'
+      this.settings.PaginationControlSettings.buttonsSettings.allPageButtonsStyle.color = '#02C8F3'
+      this.settings.PaginationControlSettings.arrowsSettings.arrowStyleColor = '#02C8F3'
+    },
+    currentButtonsStyle1: function (e) {
+      this.settings.PaginationControlSettings.buttonsSettings.currentPageButtonStyle.backgroundActive = '#02C8F3'
+      this.settings.PaginationControlSettings.buttonsSettings.currentPageButtonStyle.borderColorActive = '#02C8F3'
+      this.settings.PaginationControlSettings.buttonsSettings.currentPageButtonStyle.colorActive = '#fff'
+    },
+    currentButtonsStyle2: function (e) {
+      this.settings.PaginationControlSettings.buttonsSettings.currentPageButtonStyle.backgroundActive = 'Tomato'
+      this.settings.PaginationControlSettings.buttonsSettings.currentPageButtonStyle.borderColorActive = 'Tomato'
+      this.settings.PaginationControlSettings.buttonsSettings.currentPageButtonStyle.colorActive = '#fff'
+    },
+    currentButtonsStyle3: function (e) {
+      this.settings.PaginationControlSettings.buttonsSettings.currentPageButtonStyle.backgroundActive = '#000'
+      this.settings.PaginationControlSettings.buttonsSettings.currentPageButtonStyle.borderColorActive = '#000'
+      this.settings.PaginationControlSettings.buttonsSettings.currentPageButtonStyle.colorActive = '#fff'
     },
     arrowShow: function (e) {
       this.settings.PaginationControlSettings.arrowsSettings.hideArrows = false

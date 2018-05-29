@@ -86,7 +86,7 @@ export default {
 <style lang="scss">
   .pagination-block {
     position: relative;
-    height: 500px;
+    height: 300px;
     font-size: 60px;
     text-align: center;
     color: #000;
