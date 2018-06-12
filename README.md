@@ -13,16 +13,19 @@
 ```
 $ npm install vue-smart-pagination --save
  ```
- Register the component.
-* **ES5**
+ Register the component globally in your main.js file.
 ```js
-var Pagination= require('vue-smart-pagination')
-Vue.component(pagination, Pagination)
- ```
-* **ES6**
+import { PaginationControl, PaginationPage } from 'vue-smart-pagination'
+Vue.component('PaginationControl', PaginationControl)
+Vue.component('PaginationPage', PaginationPage)
+```
+ Or register the component locally in your vue file.
 ```js
-import Pagination from 'vue-smart-pagination'
-Vue.component('pagination', Pagination)
+import { PaginationControl, PaginationPage } from 'vue-smart-pagination'
+components: {
+    PaginationPage,
+    PaginationControl
+},
 ```
   ## Usage
 Vue-smart-pagination contains two main components:   **PaginationPage** - has content of the pages.  **PaginationControl** - has content controls.  Both components are registered globally after installing package. Also we have **props** - `:settings="settings”` which has two main objects - `PaginationControlSettings` и  `PaginationPageSettings`.
