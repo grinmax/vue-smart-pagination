@@ -1,10 +1,11 @@
 
 # Vue-smart-pagination
  A data pagination component that splits any data into pages and has many settings.
+
  All data is stored in an array and can have any values.
 
 ## Demo
-![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.jpg)
+![img](https://github.com/grinmax/vue-smart-pagination/raw/master/src/assets/demo.gif)
 
 [Demo page](http://github.webfriends.by/vue-smart-pagination/)
 
@@ -28,9 +29,23 @@ components: {
 },
 ```
   ## Usage
-Vue-smart-pagination contains two main components:   **PaginationPage** - has content of the pages.  **PaginationControl** - has content controls.  Both components are registered globally after installing package. Also we have **props** - `:settings="settings”` which has two main objects - `PaginationControlSettings` и  `PaginationPageSettings`.
+Vue-smart-pagination contains two main components:
+
+**PaginationPage** - has content of the pages.
+
+**PaginationControl** - has content controls.
+
+Both components are registered globally after installing package.
+
+Also we have **props** - `:settings="settings”` which has two main objects - `PaginationControlSettings` и  `PaginationPageSettings`.
+
+
 `PaginationControlSettings` contains settings related to buttons, arrows, dots and the start page.
+
+
 `PaginationPageSettings` contains settings related to the page, the spinner and animation of the content change.
+
+
 Array **array_data** serves to output data to the page and `is required to fill`.
 
 **Example:**
@@ -138,7 +153,9 @@ export default {
 **Adding Data to a Component:**
 
 In the array `array_data` we add data and output them to the `<pagination-page>`. When referring to an array of elements, specify the `originalEvent` property to display the current data.
-To display simple data, use `<div>`, and for components use `<component>`. `<div slot =" page "slot-scope =" item "> </ div>` is required.
+To display simple data, use `<div>`, and for components use `<component>`.
+
+`<div slot =" page "slot-scope =" item "> </ div>` is required.
 
 **Example:**
 ```
