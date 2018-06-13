@@ -147,6 +147,7 @@ Name | Type | All values | Default value | Description
 *colorActive* | String | - | #ffffff| Color of active button
 **Arrows settings:**|
  *hideArrows* | Boolean | true, false | false | Show or hide the arrows of pagination.
+ *arrowSwitchHide* | Boolean | true, false | false | Switches the mode of the arrows from disabled to full hiding.
 *arrowStyle* | String | styleArrow-1, styleArrow-2, styleArrow-3 | styleArrow-2 | Styles icons of arrow.
 *arrowStyleColor* | String | - | #02C8F3 | Color of arrow.
 *arrowStyleColorHover* | String | - | #ffffff | Color of arrow when hovering.
