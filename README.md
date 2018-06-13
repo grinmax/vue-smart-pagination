@@ -62,8 +62,7 @@ Array **array_data** serves to output data to the page and `is required to fill`
 </template>
 
 <script>
-import PaginationPage from 'vue-smart-pagination'
-import PaginationControl from 'vue-smart-pagination'
+import { PaginationControl, PaginationPage } from 'vue-smart-pagination'
 
 export default {
   name: 'App',
