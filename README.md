@@ -120,9 +120,9 @@ export default {
           },
           arrowsSettings: {
             hideArrows: false,
-            arrowStyle: 'styleArrow-2',
+            arrowStyle: '',
             arrowStyleColor: '#02C8F3',
-            arrowStyleColorHover: '#fff'
+            arrowStyleColorHover: ''
           },
           dotsSettings: {
             controlDotsStyle: '',
