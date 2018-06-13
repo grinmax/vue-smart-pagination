@@ -62,8 +62,8 @@ Array **array_data** serves to output data to the page and `is required to fill`
 </template>
 
 <script>
-import PaginationPage from './components/PaginationPage'
-import PaginationControl from './components/PaginationControl'
+import PaginationPage from 'vue-smart-pagination'
+import PaginationControl from 'vue-smart-pagination'
 
 export default {
   name: 'App',
@@ -71,32 +71,29 @@ export default {
     PaginationPage,
     PaginationControl
   },
-
   data: function () {
     return {
       array_data: [
         {
-          data: 'apple',
+          data: 'Page № 1',
           components: 'test1'
         },
         {
-          data: 'banana',
+          data: 'Page № 2',
           components: 'test2'
         },
         {
-          data: 'orange',
+          data: 'Page № 3',
           components: 'test3'
-        }
+        },
       ]
     }
   },
-
   methods: {
     test: function (e) {
       console.log(e)
     }
   },
-
   computed: {
     settings: function () {
       return {
@@ -105,39 +102,40 @@ export default {
           buttonsSettings: {
             controlClass: '',
             controlStyle: '',
-            maxButtons: 3,
+            maxButtons: 5,
             allPageButtonsStyle: {
-            'background': '',
-            'borderColor': '',
-            'color': '',
-            'backgroundHover': '',
-            'borderColorHover': '',
-            'colorHover': '',
-            'fontFamily': ''
-          },
-          currentPageButtonStyle: {
-            'backgroundActive': '',
-            'borderColorActive': '',
-            'colorActive': ''
+              'background': '',
+              'borderColor': '',
+              'color': '',
+              'backgroundHover': '',
+              'borderColorHover': '',
+              'colorHover': '',
+              'fontFamily': ''
+            },
+            currentPageButtonStyle: {
+              'backgroundActive': '',
+              'borderColorActive': '',
+              'colorActive': ''
+            }
           },
           arrowsSettings: {
             hideArrows: false,
-            arrowStyle: '',
-            arrowStyleColor: '',
-            arrowStyleColorHover: ''
+            arrowStyle: 'styleArrow-2',
+            arrowStyleColor: '#02C8F3',
+            arrowStyleColorHover: '#fff'
           },
           dotsSettings: {
             controlDotsStyle: '',
             controlDotsColor: ''
           },
           pageStarted: 1
-          },
+        },
         PaginationPageSettings: {
           pageSettings: {
             pageClass: ''
           },
           spinnerSettings: {
-            spinner: true,
+            spinner: false,
             spinnerStyle: '',
             spinnerColor: ''
           },
@@ -148,6 +146,7 @@ export default {
       }
     }
   }
+}
 </script>
 ```
 **Adding Data to a Component:**
