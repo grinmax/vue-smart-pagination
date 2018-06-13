@@ -54,7 +54,8 @@ Array **array_data** serves to output data to the page and `is required to fill`
   <div id="app">
     <pagination-page :settings="settings">
       <div slot="page" slot-scope="item">
-      {{ Your Data }}
+        <div>{{item.originalEvent.data}}</div>
+        <components :is="item.originalEvent.component"></components>  
       </div>
     </pagination-page>
     <pagination-control :settings="settings" @callMethod="test" />
