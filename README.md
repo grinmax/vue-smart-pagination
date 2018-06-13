@@ -104,6 +104,15 @@ To display simple data, use `<div>`, and for components use `<component>`.
 
 **Example:**
 ```
+import testComponent from 'testComponent'
+
+export default {
+  components: {
+    testComponent
+  }
+}
+```
+```
 arrayData: [
   {
     data: 'apple',
@@ -184,7 +193,7 @@ Vue-smart-pagination has been successfully tested in browsers such as:
 *  Safari (11.1)
 *  Opera (52.0)
 *  Firefox (59.0.2)
-*  Edge (38.14393.0.0)
+*  Edge (16)
 
 ## Developers License
 Private Enterprise "WebFriends". 2018
