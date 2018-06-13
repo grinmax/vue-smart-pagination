@@ -195,6 +195,7 @@ Vue-smart-pagination has been successfully tested in browsers such as:
 *  Firefox (59.0.2)
 *  Edge (16)
 
-## Developers License
-Private Enterprise "WebFriends". 2018
+## License
+[MIT](http://opensource.org/licenses/MIT)
 
+Copyright (c) 2018 Private Enterprise "WebFriends"

@@ -5,7 +5,7 @@
         </div>
         <transition-group appear :css="animationPage() ? true : false" :name="animationPage()" mode="out-in">
           <div class="pagination-block__page"
-               v-for="(item, index) in settings.array_data" v-if="item.active" :key="index"
+               v-for="(item, index) in settings.arrayData" v-if="item.active" :key="index"
                :class="[
                  def.pageSettings.pageClass
                ]"
