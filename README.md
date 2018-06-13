@@ -46,7 +46,7 @@ Also we have **props** - `:settings="settings”` which has two main objects - `
 `PaginationPageSettings` contains settings related to the page, the spinner and animation of the content change.
 
 
-Array **array_data** serves to output data to the page and `is required to fill`.
+Array **arrayData** serves to output data to the page and `is required to fill`.
 
 **Example:**
 ```js
@@ -55,10 +55,9 @@ Array **array_data** serves to output data to the page and `is required to fill`
     <pagination-page :settings="settings">
       <div slot="page" slot-scope="item">
         <div>{{item.originalEvent.data}}</div>
-        <components :is="item.originalEvent.component"></components>  
       </div>
     </pagination-page>
-    <pagination-control :settings="settings" @callMethod="test" />
+    <pagination-control :settings="settings" />
   </div>
 </template>
 
@@ -73,76 +72,23 @@ export default {
   },
   data: function () {
     return {
-      array_data: [
+      arrayData: [
         {
-          data: 'Page № 1',
-          components: 'test1'
+          data: 'Page № 1'
         },
         {
-          data: 'Page № 2',
-          components: 'test2'
+          data: 'Page № 2'
         },
         {
-          data: 'Page № 3',
-          components: 'test3'
+          data: 'Page № 3'
         },
       ]
-    }
-  },
-  methods: {
-    test: function (e) {
-      console.log(e)
     }
   },
   computed: {
     settings: function () {
       return {
-        array_data: this.array_data,
-        PaginationControlSettings: {
-          buttonsSettings: {
-            controlClass: '',
-            controlStyle: '',
-            maxButtons: 5,
-            allPageButtonsStyle: {
-              'background': '',
-              'borderColor': '',
-              'color': '',
-              'backgroundHover': '',
-              'borderColorHover': '',
-              'colorHover': '',
-              'fontFamily': ''
-            },
-            currentPageButtonStyle: {
-              'backgroundActive': '',
-              'borderColorActive': '',
-              'colorActive': ''
-            }
-          },
-          arrowsSettings: {
-            hideArrows: false,
-            arrowStyle: '',
-            arrowStyleColor: '#02C8F3',
-            arrowStyleColorHover: ''
-          },
-          dotsSettings: {
-            controlDotsStyle: '',
-            controlDotsColor: ''
-          },
-          pageStarted: 1
-        },
-        PaginationPageSettings: {
-          pageSettings: {
-            pageClass: ''
-          },
-          spinnerSettings: {
-            spinner: false,
-            spinnerStyle: '',
-            spinnerColor: ''
-          },
-          animationSettings: {
-            animationPage: ''
-          }
-        }
+        arrayData: this.arrayData
       }
     }
   }
@@ -151,14 +97,14 @@ export default {
 ```
 **Adding Data to a Component:**
 
-In the array `array_data` we add data and output them to the `<pagination-page>`. When referring to an array of elements, specify the `originalEvent` property to display the current data.
+In the array `arrayData` we add data and output them to the `<pagination-page>`. When referring to an array of elements, specify the `originalEvent` property to display the current data.
 To display simple data, use `<div>`, and for components use `<component>`.
 
 `<div slot =" page "slot-scope =" item "> </ div>` is required.
 
 **Example:**
 ```
-array_data: [
+arrayData: [
   {
     data: 'apple',
     component: 'testComponent'
@@ -222,11 +168,11 @@ Name | Type | All values | Default value | Description
 
 **Example:**
 ```
-<pagination-control @callMethod =" test "/>
+<pagination-control @callMethod =" showText "/>
 ```
 ```
 methods: {
-  test: function (e) {
+  showText: function (e) {
     console.log (e)
   }
 }
