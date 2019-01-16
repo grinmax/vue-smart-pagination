@@ -112,7 +112,7 @@
 
   export default {
     name: 'PaginationControl',
-    props: ['settings'],
+    props: ['settings', 'pageToChange'],
     data: function () {
       return {
         curIndex: 0,
@@ -343,6 +343,16 @@
     watch: {
       'def': function (oldVal, newVal) {
         this.rootColor()
+      },
+      'pageToChange': function (newVal) {
+        try {
+          let val = parseInt(newVal)
+          if (val < 0) val = 0
+          if (val > this.settings.arrayData.length) val = this.settings.arrayData.length
+          this.curIndex = val
+        } catch (e) {
+          console.log(e)
+        }
       }
     }
   }
