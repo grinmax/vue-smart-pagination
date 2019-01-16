@@ -37,13 +37,16 @@ Vue-smart-pagination contains two main components:
 
 Both components are registered globally after installing package.
 
-Also we have **props** - `:settings="settings”` which has two main objects - `PaginationControlSettings` и  `PaginationPageSettings`.
+Also we have **props** - `:settings="settings”` which has two main objects - `PaginationControlSettings` и  `PaginationPageSettings`, also we have property - `pageToChange`.
 
 
 `PaginationControlSettings` contains settings related to buttons, arrows, dots and the start page.
 
 
 `PaginationPageSettings` contains settings related to the page, the spinner and animation of the content change.
+
+
+`pageToChange` contains actual page, update after change page value.
 
 
 Array **arrayData** serves to output data to the page and `is required to fill`.
